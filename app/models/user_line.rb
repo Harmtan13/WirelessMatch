@@ -1,0 +1,2 @@
+class UserLine < ApplicationRecord
+end

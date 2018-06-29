@@ -1,0 +1,2 @@
+class CarrierPlan < ApplicationRecord
+end
