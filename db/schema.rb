@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_06_29_210250) do
   end
 
   create_table "carrier_plans", force: :cascade do |t|
-    t.string "plan_name"
+    t.string "name"
     t.float "data_amount"
     t.decimal "data_price"
     t.datetime "created_at", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_06_29_210250) do
   end
 
   create_table "carriers", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
