@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Carrier.create(name:'T-Mobile')
+Carrier.create(name:'Verizon')
+Carrier.create(name:'AT&T')
+Carrier.create(name:'Sprint')
