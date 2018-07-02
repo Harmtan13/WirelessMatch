@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Carrier.create(name:'T-Mobile')
-Carrier.create(name:'Verizon')
-Carrier.create(name:'AT&T')
-Carrier.create(name:'Sprint')
+tmo = Carrier.create(name:'T-Mobile')
+verizon = Carrier.create(name:'Verizon')
+att = Carrier.create(name:'AT&T')
+sprint = Carrier.create(name:'Sprint')
+
+
+tmo.carrier_plans.create(name: 'T-Mobile One', data_amount: Float::INFINITY, data_price: 0)
+verizon.carrier_plans.create(name: 'Unlimited Go', data_amount: Float::INFINITY, data_price: 0)
+att.carrier_plans.create(name: 'Unlimited Choice', data_amount: Float::INFINITY, data_price: 0)
+sprint.carrier_plans.create(name: 'Sprint Unlimited', data_amount: Float::INFINITY, data_price: 0)
