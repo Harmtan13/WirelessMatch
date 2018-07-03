@@ -7,6 +7,7 @@ class CarriersController < ApplicationController
 
   def new
     @carrier = Carrier.new
+    3.times { @carrier.carrier_plans.build }
   end
 
   def create
@@ -52,7 +53,8 @@ class CarriersController < ApplicationController
 
   def carrier_params
     params.require(:carrier).permit(
-      :name
+      :name,
+      carrier_plans_attributes: [:name, :data_amount, :data_price]
       )
   end
 end

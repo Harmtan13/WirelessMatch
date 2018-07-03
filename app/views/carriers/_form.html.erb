@@ -10,7 +10,26 @@
     <%= f.text_field :name, class: 'form-control' %>
   </div>
 
+  <ul>
+    <%= f.fields_for :carrier_plans do |plan_form| %>
+    <li>
+      <%= plan_form.label :name %>
+      <%= plan_form.text_field :name %>
+    </li>
+
+    <li>
+      <%= plan_form.label :data_amount %>
+      <%= plan_form.number_field :data_amount %>
+    </li>
+
+    <li>
+      <%= plan_form.label :data_price %>
+      <%= plan_form.number_field :data_price %>
+    </li>
+    <% end %>
+  </ul>
+
   <div class="actions">
-    <%= f.submit 'Save Service', class: 'btn btn-primary' %>
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>
