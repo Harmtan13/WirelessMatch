@@ -1,0 +1,16 @@
+<%= form_for(@carrier) do |f| %>
+  <% if @carrier.errors.any? %>
+    <% @carrier.errors.full_messages.each do |error| %>
+      <%= alert_generator(error) %>
+    <% end %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Save Service', class: 'btn btn-primary' %>
+  </div>
+<% end %>

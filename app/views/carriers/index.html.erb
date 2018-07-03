@@ -1,5 +1,7 @@
 <h1>Index Page</h1>
 
+<%= link_to('Create Carrier', new_carrier_path) %>
+
 <% @carriers.each do |carrier|%>
-  <h2><%= carrier.name %></h2>
+  <h2><%= link_to(carrier.name, carrier_path(carrier)) %></h2>
 <% end %>
