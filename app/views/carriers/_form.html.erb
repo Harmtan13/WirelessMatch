@@ -28,13 +28,14 @@
     </li>
 
       <ul>
-        <%= f.fields_for :carrier_lines do |line_form| %>
+        <%= plan_form.fields_for :carrier_lines do |line_form| %>
           <li>
             <%= line_form.label :price %>
             <%= line_form.number_field :price %>
           </li>
         <% end %>
       </ul>
+      <br><br>
     <% end %>
   </ul>
 

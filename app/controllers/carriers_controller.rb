@@ -7,7 +7,12 @@ class CarriersController < ApplicationController
 
   def new
     @carrier = Carrier.new
-    3.times { @carrier.carrier_plans.build }
+    4.times do
+       plan = @carrier.carrier_plans.build 
+       12.times do
+          plan.carrier_lines.build
+       end
+    end
   end
 
   def create
@@ -54,7 +59,12 @@ class CarriersController < ApplicationController
   def carrier_params
     params.require(:carrier).permit(
       :name,
-      carrier_plans_attributes: [:name, :data_amount, :data_price]
+      carrier_plans_attributes: [
+        :id,
+        :name, 
+        :data_amount, 
+        :data_price, 
+        carrier_lines_attributes: [:id, :price]]
       )
   end
 end
