@@ -26,6 +26,15 @@
       <%= plan_form.label :data_price %>
       <%= plan_form.number_field :data_price %>
     </li>
+
+      <ul>
+        <%= f.fields_for :carrier_lines do |line_form| %>
+          <li>
+            <%= line_form.label :price %>
+            <%= line_form.number_field :price %>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
   </ul>
 
