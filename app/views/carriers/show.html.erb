@@ -1,1 +1,12 @@
-<h1>Show Page</h1>
+<h1><%=@carrier.name%></h1>
+
+<% @plans.each do |plan|%>
+  <h2><%=plan.name %></h2>
+  <p>Data Amount: <%= plan.data_amount%></p>
+  <p>Data Price: <%= number_to_currency(plan.data_price)%></p>
+
+  <% plan.carrier_lines.each do |line| %>
+    <div><%= "Line-#{line.id}:" %> <%= number_to_currency(line.price) %></div>
+  <%end%>
+  <hr>
+<% end %>
