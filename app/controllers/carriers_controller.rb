@@ -64,7 +64,11 @@ class CarriersController < ApplicationController
         :name, 
         :data_amount, 
         :data_price, 
-        carrier_lines_attributes: [:id, :price]]
+        carrier_lines_attributes: [
+          :id, 
+          :price
+          ]
+        ]
       )
   end
 end
