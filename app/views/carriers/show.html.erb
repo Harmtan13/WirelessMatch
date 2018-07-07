@@ -5,8 +5,8 @@
   <p>Data Amount: <%= plan.data_amount%></p>
   <p>Data Price: <%= number_to_currency(plan.data_price)%></p>
 
-  <% plan.carrier_lines.each do |line| %>
-    <div><%= "Line-#{line.id}:" %> <%= number_to_currency(line.price) %></div>
+  <% plan.carrier_lines.each.with_index(1) do |line, index| %>
+    <div><%= "Line-#{index}:" %> <%= number_to_currency(line.price) %></div>
   <%end%>
   <hr>
 <% end %>
