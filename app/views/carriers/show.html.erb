@@ -1,4 +1,7 @@
 <h1><%=@carrier.name%></h1>
+  <div>
+    <%= link_to('Edit Carrier', edit_carrier_path)%>
+  </div>
 
 <% @plans.each do |plan|%>
   <h2><%=plan.name %></h2>
