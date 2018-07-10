@@ -13,24 +13,38 @@
   <ul>
     <%= f.fields_for :carrier_plans do |plan_form| %>
     <li>
-      <%= plan_form.label :name %>
+      <%= plan_form.label :name, 'Plan Name' %>
       <%= plan_form.text_field :name %>
     </li>
 
     <li>
-      <%= plan_form.label :data_amount %>
-      <%= plan_form.number_field :data_amount %>
+      <%= plan_form.label :data_amount, 'Data Plan' %>
+      <%= plan_form.select(
+            :data_amount, 
+              options_for_select([
+                ['Unlimited', Float::INFINITY],
+                ['20GB', 20],
+                ['15GB', 15],
+                ['10GB', 10],
+                ['8GB', 8],
+                ['5GB', 5],
+                ['4GB', 4],
+                ['3GB', 3],
+                ['2GB', 2],
+                ['1GB', 1]
+              ])
+        ) %>
     </li>
 
     <li>
-      <%= plan_form.label :data_price %>
+      <%= plan_form.label :data_price, 'Data Price' %>
       <%= plan_form.number_field :data_price %>
     </li>
 
       <ul>
         <%= plan_form.fields_for :carrier_lines do |line_form| %>
           <li>
-            <%= line_form.label :price %>
+            <%= line_form.label :price, "Line-#{line_form.index+1}" %>
             <%= line_form.number_field :price %>
           </li>
         <% end %>
