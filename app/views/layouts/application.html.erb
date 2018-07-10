@@ -10,12 +10,7 @@
   </head>
 
   <body>
-
-    <div>
-      <%= link_to('Home', root_path) %>
-      <%= link_to('Carrier Plans', carriers_path) %>
-    </div>
- 
+    <%= render 'shared/nav' %>
     <%= yield %>
   </body>
 </html>
