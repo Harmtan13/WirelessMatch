@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_29_210250) do
+ActiveRecord::Schema.define(version: 2018_07_11_210728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,16 +39,6 @@ ActiveRecord::Schema.define(version: 2018_06_29_210250) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "line_requirements", force: :cascade do |t|
-    t.boolean "hd_video"
-    t.float "hotspot_data"
-    t.float "line_data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_line_id"
-    t.index ["user_line_id"], name: "index_line_requirements_on_user_line_id"
-  end
-
   create_table "user_lines", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,6 +57,5 @@ ActiveRecord::Schema.define(version: 2018_06_29_210250) do
 
   add_foreign_key "carrier_lines", "carrier_plans"
   add_foreign_key "carrier_plans", "carriers"
-  add_foreign_key "line_requirements", "user_lines"
   add_foreign_key "user_lines", "user_plans"
 end
