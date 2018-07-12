@@ -1,0 +1,54 @@
+<h1>Plan Quiz</h1>
+
+<%= form_for(@plan) do |f| %>
+  <% if @plan.errors.any? %>
+    <% @plan.errors.full_messages.each do |error| %>
+      <%= alert_generator(error) %>
+    <% end %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :auto_pay %>
+    <%= f.text_field :auto_pay, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :senior_pricing %>
+    <%= f.text_field :senior_pricing, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :military_pricing %>
+    <%= f.text_field :military_pricing, class: 'form-control' %>
+  </div>
+
+
+  <ul>
+    <%= f.fields_for :user_lines do |line_form| %>
+    <li>
+      <%= line_form.label :data_amount, 'Plan Name' %>
+      <%= line_form.text_field :data_amount %>
+    </li>
+
+    <li>
+      <%= line_form.label :hotspot, 'Data Price' %>
+      <%= line_form.number_field :hotspot %>
+    </li>
+
+    <li>
+      <%= line_form.label :hd_video, 'Data Plan' %>
+      <%= line_form.select(
+            :hd_video, 
+              options_for_select([
+                ['Yes', true],
+                ['No', false],
+              ])
+        ) %>
+    </li>
+    <% end %>
+  </ul>
+
+  <div class="actions">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+  </div>
+<% end %>
