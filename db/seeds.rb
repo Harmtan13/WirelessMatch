@@ -1,241 +1,469 @@
+#T-Mobile Plans
+
+
+
 tmo = Carrier.create(name:'T-Mobile')
 
-  tmo_55 = tmo.carrier_plans.create(name: 'Unlimited 55', data_amount: Float::INFINITY, data_price: 0)
-    tmo_55.carrier_lines.create(price: 55)
-    tmo_55.carrier_lines.create(price: 25)
+  tmo_55 = tmo.carrier_plans.create(
+    name: 'Unlimited 55', 
+    data_amount: Float::INFINITY,
+    data_price: 0,
+    hd_video: false,
+    hotspot_lte: 0,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 50,
+    max_lines: 12,
+    auto_pay: 5,
+    max_auto_pay: 40)
+      tmo_55.carrier_lines.create(price: 55)
+      tmo_55.carrier_lines.create(price: 25)
 
-  military_one = tmo.carrier_plans.create(name: 'T-Mobile One Military', data_amount: Float::INFINITY, data_price: 0)
-    military_one.carrier_lines.create(price: 60)
-    military_one.carrier_lines.create(price: 30)
-    military_one.carrier_lines.create(price: 15)
-    military_one.carrier_lines.create(price: 15)
-    military_one.carrier_lines.create(price: 15)
-    military_one.carrier_lines.create(price: 15)
-    military_one.carrier_lines.create(price: 25)
-    military_one.carrier_lines.create(price: 25)
-    military_one.carrier_lines.create(price: 30)
-    military_one.carrier_lines.create(price: 30)
-    military_one.carrier_lines.create(price: 30)
-    military_one.carrier_lines.create(price: 30)
+  military_one = tmo.carrier_plans.create(
+    name: 'T-Mobile One Military', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: false,
+    hotspot_lte: 0,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 50,
+    max_lines: 12,
+    auto_pay: 5,
+    max_auto_pay: 40)
+      military_one.carrier_lines.create(price: 60)
+      military_one.carrier_lines.create(price: 30)
+      military_one.carrier_lines.create(price: 15)
+      military_one.carrier_lines.create(price: 15)
+      military_one.carrier_lines.create(price: 15)
+      military_one.carrier_lines.create(price: 15)
+      military_one.carrier_lines.create(price: 25)
+      military_one.carrier_lines.create(price: 25)
+      military_one.carrier_lines.create(price: 30)
+      military_one.carrier_lines.create(price: 30)
+      military_one.carrier_lines.create(price: 30)
+      military_one.carrier_lines.create(price: 30)
 
-  tmo_one = tmo.carrier_plans.create(name: 'T-Mobile One', data_amount: Float::INFINITY, data_price: 0)
-    tmo_one.carrier_lines.create(price: 75)
-    tmo_one.carrier_lines.create(price: 55)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
-    tmo_one.carrier_lines.create(price: 25)
+  tmo_one = tmo.carrier_plans.create(
+    name: 'T-Mobile One', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: false,
+    hotspot_lte: 0,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 50,
+    max_lines: 12,
+    auto_pay: 5,
+    max_auto_pay: 40)
+      tmo_one.carrier_lines.create(price: 75)
+      tmo_one.carrier_lines.create(price: 55)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 25)
 
-  tmo_one_plus = tmo.carrier_plans.create(name: 'T-Mobile One Plus', data_amount: Float::INFINITY, data_price: 0)
-    tmo_one_plus.carrier_lines.create(price: 75+10)
-    tmo_one_plus.carrier_lines.create(price: 55+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
-    tmo_one_plus.carrier_lines.create(price: 25+10)
+  tmo_one_plus = tmo.carrier_plans.create(
+    name: 'T-Mobile One Plus', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: 10,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 50,
+    max_lines: 12,
+    auto_pay: 5,
+    max_auto_pay: 40)
+      tmo_one_plus.carrier_lines.create(price: 75+10)
+      tmo_one_plus.carrier_lines.create(price: 55+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 25+10)
 
-  tmo_one_plus_international = tmo.carrier_plans.create(name: 'T-Mobile One Plus International', data_amount: Float::INFINITY, data_price: 0)
-    tmo_one_plus_international.carrier_lines.create(price: 75+25)
-    tmo_one_plus_international.carrier_lines.create(price: 55+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
-    tmo_one_plus_international.carrier_lines.create(price: 25+25)
+  tmo_one_plus_international = tmo.carrier_plans.create(
+    name: 'T-Mobile One Plus International', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: Float::INFINITY,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 50,
+    max_lines: 12,
+    auto_pay: 5,
+    max_auto_pay: 40)
+      tmo_one_plus_international.carrier_lines.create(price: 75+25)
+      tmo_one_plus_international.carrier_lines.create(price: 55+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+
+puts 'T-Mobile Plans created!'
+
+#Verizon Plans
 
 verizon = Carrier.create(name:'Verizon')
-  shared_plan_2gb = verizon.carrier_plans.create(name: 'Shared Data 2GB', data_amount: 2, data_price: 35)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
-    shared_plan_2gb.carrier_lines.create(price: 20)
+  shared_plan_2gb = verizon.carrier_plans.create(
+    name: 'Shared Data 2GB',
+    data_amount: 2,
+    data_price: 35,
+    hd_video: true,
+    hotspot_lte: 0,
+    hotspot_3g: 0,
+    soft_cap: 2,
+    max_lines: 10,
+    auto_pay: 0,
+    max_auto_pay: 0)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
+      shared_plan_2gb.carrier_lines.create(price: 20)
 
-  shared_plan_4gb = verizon.carrier_plans.create(name: 'Shared Data 4GB', data_amount: 4, data_price: 50)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
-    shared_plan_4gb.carrier_lines.create(price: 20)
+  shared_plan_4gb = verizon.carrier_plans.create(
+    name: 'Shared Data 4GB', 
+    data_amount: 4, 
+    data_price: 50,
+    hd_video: true,
+    hotspot_lte: 0,
+    hotspot_3g: 0,
+    soft_cap: 4,
+    max_lines: 10,
+    auto_pay: 0,
+    max_auto_pay: 0)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
+      shared_plan_4gb.carrier_lines.create(price: 20)
 
-  shared_plan_5gb = verizon.carrier_plans.create(name: 'Shared Data 5GB', data_amount: 5, data_price: 40)
-    shared_plan_5gb.carrier_lines.create(price: 20)
+  shared_plan_5gb = verizon.carrier_plans.create(
+    name: 'Shared Data 5GB', 
+    data_amount: 5, 
+    data_price: 40,
+    hd_video: true,
+    hotspot_lte: 0,
+    hotspot_3g: 0,
+    soft_cap: 5,
+    max_lines: 1,
+    auto_pay: 0,
+    max_auto_pay: 0)
+      shared_plan_5gb.carrier_lines.create(price: 20)
 
-  shared_plan_8gb = verizon.carrier_plans.create(name: 'Shared Data 8GB', data_amount: 8, data_price: 70)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
-    shared_plan_8gb.carrier_lines.create(price: 20)
+  shared_plan_8gb = verizon.carrier_plans.create(
+    name: 'Shared Data 8GB', 
+    data_amount: 8, 
+    data_price: 70,
+    hd_video: true,
+    hotspot_lte: 0,
+    hotspot_3g: 0,
+    soft_cap: 8,
+    max_lines: 10,
+    auto_pay: 0,
+    max_auto_pay: 0)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
+      shared_plan_8gb.carrier_lines.create(price: 20)
 
-  go_unlimited = verizon.carrier_plans.create(name: 'Go-Unlimited', data_amount: Float::INFINITY, data_price: 0)
-    go_unlimited.carrier_lines.create(price: 80)
-    go_unlimited.carrier_lines.create(price: 60)
-    go_unlimited.carrier_lines.create(price: 25)
-    go_unlimited.carrier_lines.create(price: 15)
-    go_unlimited.carrier_lines.create(price: 45)
-    go_unlimited.carrier_lines.create(price: 45)
-    go_unlimited.carrier_lines.create(price: 45)
-    go_unlimited.carrier_lines.create(price: 45)
-    go_unlimited.carrier_lines.create(price: 45)
-    go_unlimited.carrier_lines.create(price: 45)
+  go_unlimited = verizon.carrier_plans.create(
+    name: 'Go-Unlimited', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hotspot_lte: 0,
+    hotspot_3g: Float::INFINITY,
+    hd_video: false,
+    soft_cap: 0,
+    max_lines: 10,
+    auto_pay: 5,
+    max_auto_pay: 50)
+      go_unlimited.carrier_lines.create(price: 80)
+      go_unlimited.carrier_lines.create(price: 60)
+      go_unlimited.carrier_lines.create(price: 25)
+      go_unlimited.carrier_lines.create(price: 15)
+      go_unlimited.carrier_lines.create(price: 45)
+      go_unlimited.carrier_lines.create(price: 45)
+      go_unlimited.carrier_lines.create(price: 45)
+      go_unlimited.carrier_lines.create(price: 45)
+      go_unlimited.carrier_lines.create(price: 45)
+      go_unlimited.carrier_lines.create(price: 45)
 
-  beyond_unlimited = verizon.carrier_plans.create(name: 'Beyond Unlimited', data_amount: Float::INFINITY, data_price: 0)
-    beyond_unlimited.carrier_lines.create(price: 90)
-    beyond_unlimited.carrier_lines.create(price: 80)
-    beyond_unlimited.carrier_lines.create(price: 25)
-    beyond_unlimited.carrier_lines.create(price: 25)
-    beyond_unlimited.carrier_lines.create(price: 55)
-    beyond_unlimited.carrier_lines.create(price: 55)
-    beyond_unlimited.carrier_lines.create(price: 55)
-    beyond_unlimited.carrier_lines.create(price: 55)
-    beyond_unlimited.carrier_lines.create(price: 55)
-    beyond_unlimited.carrier_lines.create(price: 55)
+  beyond_unlimited = verizon.carrier_plans.create(
+    name: 'Beyond Unlimited', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: 15,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 22,
+    max_lines: 10,
+    auto_pay: 5,
+    max_auto_pay: 50)
+      beyond_unlimited.carrier_lines.create(price: 90)
+      beyond_unlimited.carrier_lines.create(price: 80)
+      beyond_unlimited.carrier_lines.create(price: 25)
+      beyond_unlimited.carrier_lines.create(price: 25)
+      beyond_unlimited.carrier_lines.create(price: 55)
+      beyond_unlimited.carrier_lines.create(price: 55)
+      beyond_unlimited.carrier_lines.create(price: 55)
+      beyond_unlimited.carrier_lines.create(price: 55)
+      beyond_unlimited.carrier_lines.create(price: 55)
+      beyond_unlimited.carrier_lines.create(price: 55)
 
-  above_unlimited = verizon.carrier_plans.create(name: 'Above Unlimited', data_amount: Float::INFINITY, data_price: 0)
-    above_unlimited.carrier_lines.create(price: 100)
-    above_unlimited.carrier_lines.create(price: 90)
-    above_unlimited.carrier_lines.create(price: 35)
-    above_unlimited.carrier_lines.create(price: 35)
-    above_unlimited.carrier_lines.create(price: 65)
-    above_unlimited.carrier_lines.create(price: 65)
-    above_unlimited.carrier_lines.create(price: 65)
-    above_unlimited.carrier_lines.create(price: 65)
-    above_unlimited.carrier_lines.create(price: 65)
-    above_unlimited.carrier_lines.create(price: 65)
+  above_unlimited = verizon.carrier_plans.create(
+    name: 'Above Unlimited', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: 20,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 75,
+    max_lines: 10,
+    auto_pay: 5,
+    max_auto_pay: 50)
+      above_unlimited.carrier_lines.create(price: 100)
+      above_unlimited.carrier_lines.create(price: 90)
+      above_unlimited.carrier_lines.create(price: 35)
+      above_unlimited.carrier_lines.create(price: 35)
+      above_unlimited.carrier_lines.create(price: 65)
+      above_unlimited.carrier_lines.create(price: 65)
+      above_unlimited.carrier_lines.create(price: 65)
+      above_unlimited.carrier_lines.create(price: 65)
+      above_unlimited.carrier_lines.create(price: 65)
+      above_unlimited.carrier_lines.create(price: 65)
+
+    puts 'Verizon Plans created!'
 
 
+
+#AT&T Plans
 
 att = Carrier.create(name:'AT&T')
-  flex_share_1gb = att.carrier_plans.create(name: 'Mobile Share Flex 1GB', data_amount: 1, data_price: 35)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
-    flex_share_1gb.carrier_lines.create(price: 20)
+  flex_share_1gb = att.carrier_plans.create(
+    name: 'Mobile Share Flex 1GB', 
+    data_amount: 1, 
+    data_price: 35,
+    hd_video: true,
+    hotspot_lte: 1,
+    hotspot_3g: 0,
+    soft_cap: 1,
+    max_lines: 10,
+    auto_pay: 10,
+    max_auto_pay: 10)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
+      flex_share_1gb.carrier_lines.create(price: 20)
 
-  flex_share_5gb = att.carrier_plans.create(name: 'Mobile Share Flex 5GB', data_amount: 5, data_price: 60)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
-    flex_share_5gb.carrier_lines.create(price: 20)
+  flex_share_5gb = att.carrier_plans.create(
+    name: 'Mobile Share Flex 5GB', 
+    data_amount: 5, 
+    data_price: 60,
+    hd_video: true,
+    hotspot_lte: 5,
+    hotspot_3g: 0,
+    soft_cap: 5,
+    max_lines: 10,
+    auto_pay: 10,
+    max_auto_pay: 10)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
+      flex_share_5gb.carrier_lines.create(price: 20)
 
-  flex_share_10gb = att.carrier_plans.create(name: 'Mobile Share Flex 10GB', data_amount: 10, data_price: 85)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
-    flex_share_10gb.carrier_lines.create(price: 20)
+  flex_share_10gb = att.carrier_plans.create(
+    name: 'Mobile Share Flex 10GB', 
+    data_amount: 10, 
+    data_price: 85,
+    hd_video: true,
+    hotspot_lte: 10,
+    hotspot_3g: 0,
+    soft_cap: 10,
+    max_lines: 10,
+    auto_pay: 10,
+    max_auto_pay: 10)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
+      flex_share_10gb.carrier_lines.create(price: 20)
 
-  flex_share_20gb = att.carrier_plans.create(name: 'Mobile Share Flex 20GB', data_amount: 20, data_price: 110)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
-    flex_share_20gb.carrier_lines.create(price: 20)
+  flex_share_20gb = att.carrier_plans.create(
+    name: 'Mobile Share Flex 20GB', 
+    data_amount: 20, 
+    data_price: 110,
+    hd_video: true,
+    hotspot_lte: 20,
+    hotspot_3g: 0,
+    soft_cap: 20,
+    max_lines: 10,
+    auto_pay: 10,
+    max_auto_pay: 10)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
+      flex_share_20gb.carrier_lines.create(price: 20)
 
-  unlimited_choice = att.carrier_plans.create(name: 'Unlimited-Choice', data_amount: Float::INFINITY, data_price: 0)
-    unlimited_choice.carrier_lines.create(price: 75)
-    unlimited_choice.carrier_lines.create(price: 65)
-    unlimited_choice.carrier_lines.create(price: 20)
-    unlimited_choice.carrier_lines.create(price: 20)
-    unlimited_choice.carrier_lines.create(price: 30)
-    unlimited_choice.carrier_lines.create(price: 30)
-    unlimited_choice.carrier_lines.create(price: 30)
-    unlimited_choice.carrier_lines.create(price: 30)
-    unlimited_choice.carrier_lines.create(price: 30)
-    unlimited_choice.carrier_lines.create(price: 30)
+  unlimited_choice = att.carrier_plans.create(
+    name: 'Unlimited-Choice', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: false,
+    hotspot_lte: 0,
+    hotspot_3g: 0,
+    soft_cap: 0,
+    max_lines: 10,
+    auto_pay: 10,
+    max_auto_pay: 10)
+      unlimited_choice.carrier_lines.create(price: 75)
+      unlimited_choice.carrier_lines.create(price: 65)
+      unlimited_choice.carrier_lines.create(price: 20)
+      unlimited_choice.carrier_lines.create(price: 20)
+      unlimited_choice.carrier_lines.create(price: 30)
+      unlimited_choice.carrier_lines.create(price: 30)
+      unlimited_choice.carrier_lines.create(price: 30)
+      unlimited_choice.carrier_lines.create(price: 30)
+      unlimited_choice.carrier_lines.create(price: 30)
+      unlimited_choice.carrier_lines.create(price: 30)
 
-  unlimited_plus = att.carrier_plans.create(name: 'Unlimited-Plus', data_amount: Float::INFINITY, data_price: 0)
-    unlimited_plus.carrier_lines.create(price: 90)
-    unlimited_plus.carrier_lines.create(price: 80)
-    unlimited_plus.carrier_lines.create(price: 20)
-    unlimited_plus.carrier_lines.create(price: 20)
-    unlimited_plus.carrier_lines.create(price: 30)
-    unlimited_plus.carrier_lines.create(price: 30)
-    unlimited_plus.carrier_lines.create(price: 30)
-    unlimited_plus.carrier_lines.create(price: 30)
-    unlimited_plus.carrier_lines.create(price: 30)
-    unlimited_plus.carrier_lines.create(price: 30)
+  unlimited_plus = att.carrier_plans.create(
+    name: 'Unlimited-Plus', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: 15,
+    hotspot_3g: 0,
+    soft_cap: 22,
+    max_lines: 10,
+    auto_pay: 10,
+    max_auto_pay: 10)
+      unlimited_plus.carrier_lines.create(price: 90)
+      unlimited_plus.carrier_lines.create(price: 80)
+      unlimited_plus.carrier_lines.create(price: 20)
+      unlimited_plus.carrier_lines.create(price: 20)
+      unlimited_plus.carrier_lines.create(price: 30)
+      unlimited_plus.carrier_lines.create(price: 30)
+      unlimited_plus.carrier_lines.create(price: 30)
+      unlimited_plus.carrier_lines.create(price: 30)
+      unlimited_plus.carrier_lines.create(price: 30)
+      unlimited_plus.carrier_lines.create(price: 30)
+
+    puts 'AT&T Plans created!'
+
+#Sprint Plans
 
 
 sprint = Carrier.create(name:'Sprint')
-  two_gb = sprint.carrier_plans.create(name: '2GB', data_amount: 2, data_price: 0)
-    two_gb.carrier_lines.create(price: 40)
+  two_gb = sprint.carrier_plans.create(
+    name: '2GB', 
+    data_amount: 2, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: 2,
+    hotspot_3g: 0,
+    soft_cap: 2,
+    max_lines: 1,
+    auto_pay: 0,
+    max_auto_pay: 0)
+      two_gb.carrier_lines.create(price: 40)
 
-  unlimited_freedom_promo = sprint.carrier_plans.create(name: 'Unlimited Freedom Promo', data_amount: Float::INFINITY, data_price: 0)
-    unlimited_freedom_promo.carrier_lines.create(price: 65)
-    unlimited_freedom_promo.carrier_lines.create(price: 45)
-    unlimited_freedom_promo.carrier_lines.create(price: 5)
-    unlimited_freedom_promo.carrier_lines.create(price: 5)
-    unlimited_freedom_promo.carrier_lines.create(price: 5)
-    unlimited_freedom_promo.carrier_lines.create(price: 35)
-    unlimited_freedom_promo.carrier_lines.create(price: 35)
-    unlimited_freedom_promo.carrier_lines.create(price: 35)
-    unlimited_freedom_promo.carrier_lines.create(price: 35)
-    unlimited_freedom_promo.carrier_lines.create(price: 35)
+  unlimited_freedom_promo = sprint.carrier_plans.create(
+    name: 'Unlimited Freedom Promo', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: 10,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 23,
+    max_lines: 10,
+    auto_pay: 5,
+    max_auto_pay: 50)
+      unlimited_freedom_promo.carrier_lines.create(price: 65)
+      unlimited_freedom_promo.carrier_lines.create(price: 45)
+      unlimited_freedom_promo.carrier_lines.create(price: 5)
+      unlimited_freedom_promo.carrier_lines.create(price: 5)
+      unlimited_freedom_promo.carrier_lines.create(price: 5)
+      unlimited_freedom_promo.carrier_lines.create(price: 35)
+      unlimited_freedom_promo.carrier_lines.create(price: 35)
+      unlimited_freedom_promo.carrier_lines.create(price: 35)
+      unlimited_freedom_promo.carrier_lines.create(price: 35)
+      unlimited_freedom_promo.carrier_lines.create(price: 35)
 
-  unlimited_freedom = sprint.carrier_plans.create(name: 'Unlimited Freedom', data_amount: Float::INFINITY, data_price: 0)
-    unlimited_freedom.carrier_lines.create(price: 65)
-    unlimited_freedom.carrier_lines.create(price: 45)
-    unlimited_freedom.carrier_lines.create(price: 35)
-    unlimited_freedom.carrier_lines.create(price: 35)
-    unlimited_freedom.carrier_lines.create(price: 35)
-    unlimited_freedom.carrier_lines.create(price: 35)
-    unlimited_freedom.carrier_lines.create(price: 35)
-    unlimited_freedom.carrier_lines.create(price: 35)
-    unlimited_freedom.carrier_lines.create(price: 35)
-    unlimited_freedom.carrier_lines.create(price: 35)
+  unlimited_freedom = sprint.carrier_plans.create(
+    name: 'Unlimited Freedom', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hotspot_lte: 10,
+    hd_video: true,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 23,
+    max_lines: 10,
+    auto_pay: 5,
+    max_auto_pay: 50)
+      unlimited_freedom.carrier_lines.create(price: 65)
+      unlimited_freedom.carrier_lines.create(price: 45)
+      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_freedom.carrier_lines.create(price: 35)
+
+    puts 'Sprint Plans created!'
