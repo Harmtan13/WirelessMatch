@@ -1,4 +1,5 @@
 class UserPlansController < ApplicationController
+  before_action :set_plan, only: [:edit, :update, :show, :destroy]
   def new
     @plan = UserPlan.new
 
@@ -44,5 +45,9 @@ class UserPlansController < ApplicationController
         :hd_video
         ]
       )
+  end
+
+  def set_plan
+    @plan = UserPlan.find(params[:id])
   end
 end
