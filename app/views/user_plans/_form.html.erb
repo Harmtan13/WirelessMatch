@@ -4,7 +4,11 @@
       <%= alert_generator(error) %>
     <% end %>
   <% end %>
-
+  <div>
+    <%= f.label :line_quantity %>
+    <%= f.number_field :line_quantity %>
+  </div>
+      
   <div class="form-group">
     <%= f.label :auto_pay %>
     <%= f.select(
