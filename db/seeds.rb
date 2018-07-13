@@ -1,7 +1,5 @@
 #T-Mobile Plans
 
-
-
 tmo = Carrier.create(name:'T-Mobile')
 
   tmo_55 = tmo.carrier_plans.create(
@@ -467,3 +465,18 @@ sprint = Carrier.create(name:'Sprint')
       unlimited_freedom.carrier_lines.create(price: 35)
 
     puts 'Sprint Plans created!'
+
+    #Quiz 1
+
+    plan_one = UserPlan.create(line_quantity: 5, auto_pay: true, senior_pricing: false, military_pricing: false)
+      plan_one.user_lines.create(data_amount: 10, hotspot: 5, hd_video: true)
+      plan_one.user_lines.create(data_amount: 8, hotspot: 2, hd_video: true)
+      plan_one.user_lines.create(data_amount: 5, hotspot: 0, hd_video: true)
+      plan_one.user_lines.create(data_amount: 3, hotspot: 0, hd_video: false)
+      plan_one.user_lines.create(data_amount: 1, hotspot: 0, hd_video: false)
+    
+    # Quiz 2
+
+    plan_two = UserPlan.create(line_quantity: 2, auto_pay: true, senior_pricing: false, military_pricing: false)
+      plan_two.user_lines.create(data_amount: Float::INFINITY, hotspot: 5, hd_video: true)
+      plan_two.user_lines.create(data_amount: 8, hotspot: 0, hd_video: true)
