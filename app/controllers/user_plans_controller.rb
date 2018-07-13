@@ -31,6 +31,10 @@ class UserPlansController < ApplicationController
     end
   end
 
+  def results
+
+  end
+
   def user_params
     params.require(:user_plan).permit(
       :id,
