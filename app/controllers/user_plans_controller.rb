@@ -6,10 +6,10 @@ class UserPlansController < ApplicationController
   end
 
   def create
-    @carrier = Carrier.new(carrier_params)
+    @plan = UserPlan.new(user_params)
 
     respond_to do |format|
-      if @carrier.save
+      if @plan.save
         format.html { redirect_to carriers_path, notice: 'New Carrier has been created!'}
       else
         format.html { render :new }
@@ -22,11 +22,27 @@ class UserPlansController < ApplicationController
 
   def update
     respond_to do |format|
-      if @carrier.update(carrier_params)
+      if @plan.update(user_params)
         format.html {redirect_to carriers_path, notice: 'Carrier has been updated!'}
       else
         format.html {render :edit}
       end
     end
+  end
+
+  def user_params
+    params.require(:user_plan).permit(
+      :id,
+      :line_quantity, 
+      :auto_pay, 
+      :senior_pricing,
+      :military_pricing,
+      user_lines_attributes: [
+        :id,
+        :data_amount,
+        :hotspot,
+        :hd_video
+        ]
+      )
   end
 end
