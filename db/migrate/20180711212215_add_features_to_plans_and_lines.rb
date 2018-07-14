@@ -5,6 +5,6 @@ class AddFeaturesToPlansAndLines < ActiveRecord::Migration[5.2]
 
     add_column :user_lines, :data_amount, :float
     add_column :user_lines, :hotspot, :float
-    add_column :user_lines, :hd_video, :float
+    add_column :user_lines, :hd_video, :boolean
   end
 end
