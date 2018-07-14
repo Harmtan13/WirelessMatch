@@ -32,7 +32,8 @@ class UserPlansController < ApplicationController
   end
 
   def results
-
+    @carriers = Carrier.all
+    @quiz = UserPlan.first
   end
 
   def user_params
