@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_193504) do
     t.bigint "user_plan_id"
     t.float "data_amount"
     t.float "hotspot"
-    t.float "hd_video"
+    t.boolean "hd_video"
     t.index ["user_plan_id"], name: "index_user_lines_on_user_plan_id"
   end
 
