@@ -11,5 +11,7 @@
   <% plan.carrier_lines.each.with_index(1) do |line, index| %>
     <div><%= "Line-#{index}:" %> <%= number_to_currency(line.price) %></div>
   <%end%>
+  <br>
+  <b>Plan-Total: <%= number_to_currency(plan.carrier_lines.sum(:price))%></b>
   <hr>
 <% end %>
