@@ -12,7 +12,9 @@ tmo = Carrier.create(name:'T-Mobile')
     soft_cap: 50,
     max_lines: 12,
     auto_pay: 5,
-    max_auto_pay: 40)
+    max_auto_pay: 40,
+    senior_pricing: true,
+    military_pricing: false)
       tmo_55.carrier_lines.create(price: 55)
       tmo_55.carrier_lines.create(price: 25)
 
@@ -26,7 +28,9 @@ tmo = Carrier.create(name:'T-Mobile')
     soft_cap: 50,
     max_lines: 12,
     auto_pay: 5,
-    max_auto_pay: 40)
+    max_auto_pay: 40,
+    senior_pricing: false,
+    military_pricing: true)
       military_one.carrier_lines.create(price: 60)
       military_one.carrier_lines.create(price: 30)
       military_one.carrier_lines.create(price: 15)
@@ -50,7 +54,9 @@ tmo = Carrier.create(name:'T-Mobile')
     soft_cap: 50,
     max_lines: 12,
     auto_pay: 5,
-    max_auto_pay: 40)
+    max_auto_pay: 40,
+    senior_pricing: false,
+    military_pricing: false)
       tmo_one.carrier_lines.create(price: 75)
       tmo_one.carrier_lines.create(price: 55)
       tmo_one.carrier_lines.create(price: 25)
@@ -74,7 +80,9 @@ tmo = Carrier.create(name:'T-Mobile')
     soft_cap: 50,
     max_lines: 12,
     auto_pay: 5,
-    max_auto_pay: 40)
+    max_auto_pay: 40,
+    senior_pricing: false,
+    military_pricing: false)
       tmo_one_plus.carrier_lines.create(price: 75+10)
       tmo_one_plus.carrier_lines.create(price: 55+10)
       tmo_one_plus.carrier_lines.create(price: 25+10)
@@ -98,7 +106,9 @@ tmo = Carrier.create(name:'T-Mobile')
     soft_cap: 50,
     max_lines: 12,
     auto_pay: 5,
-    max_auto_pay: 40)
+    max_auto_pay: 40,
+    senior_pricing: false,
+    military_pricing: false)
       tmo_one_plus_international.carrier_lines.create(price: 75+25)
       tmo_one_plus_international.carrier_lines.create(price: 55+25)
       tmo_one_plus_international.carrier_lines.create(price: 25+25)
@@ -127,7 +137,9 @@ verizon = Carrier.create(name:'Verizon')
     soft_cap: 2,
     max_lines: 10,
     auto_pay: 0,
-    max_auto_pay: 0)
+    max_auto_pay: 0,
+    senior_pricing: false,
+    military_pricing: false)
       shared_plan_2gb.carrier_lines.create(price: 20)
       shared_plan_2gb.carrier_lines.create(price: 20)
       shared_plan_2gb.carrier_lines.create(price: 20)
@@ -149,7 +161,9 @@ verizon = Carrier.create(name:'Verizon')
     soft_cap: 4,
     max_lines: 10,
     auto_pay: 0,
-    max_auto_pay: 0)
+    max_auto_pay: 0,
+    senior_pricing: false,
+    military_pricing: false)
       shared_plan_4gb.carrier_lines.create(price: 20)
       shared_plan_4gb.carrier_lines.create(price: 20)
       shared_plan_4gb.carrier_lines.create(price: 20)
@@ -171,7 +185,9 @@ verizon = Carrier.create(name:'Verizon')
     soft_cap: 5,
     max_lines: 1,
     auto_pay: 0,
-    max_auto_pay: 0)
+    max_auto_pay: 0,
+    senior_pricing: false,
+    military_pricing: false)
       shared_plan_5gb.carrier_lines.create(price: 20)
 
   shared_plan_8gb = verizon.carrier_plans.create(
@@ -184,7 +200,9 @@ verizon = Carrier.create(name:'Verizon')
     soft_cap: 8,
     max_lines: 10,
     auto_pay: 0,
-    max_auto_pay: 0)
+    max_auto_pay: 0,
+    senior_pricing: false,
+    military_pricing: false)
       shared_plan_8gb.carrier_lines.create(price: 20)
       shared_plan_8gb.carrier_lines.create(price: 20)
       shared_plan_8gb.carrier_lines.create(price: 20)
@@ -206,7 +224,9 @@ verizon = Carrier.create(name:'Verizon')
     soft_cap: 0,
     max_lines: 10,
     auto_pay: 5,
-    max_auto_pay: 50)
+    max_auto_pay: 50,
+    senior_pricing: false,
+    military_pricing: false)
       go_unlimited.carrier_lines.create(price: 80)
       go_unlimited.carrier_lines.create(price: 60)
       go_unlimited.carrier_lines.create(price: 25)
@@ -228,7 +248,9 @@ verizon = Carrier.create(name:'Verizon')
     soft_cap: 22,
     max_lines: 10,
     auto_pay: 5,
-    max_auto_pay: 50)
+    max_auto_pay: 50,
+    senior_pricing: false,
+    military_pricing: false)
       beyond_unlimited.carrier_lines.create(price: 90)
       beyond_unlimited.carrier_lines.create(price: 80)
       beyond_unlimited.carrier_lines.create(price: 25)
@@ -250,7 +272,9 @@ verizon = Carrier.create(name:'Verizon')
     soft_cap: 75,
     max_lines: 10,
     auto_pay: 5,
-    max_auto_pay: 50)
+    max_auto_pay: 50,
+    senior_pricing: false,
+    military_pricing: false)
       above_unlimited.carrier_lines.create(price: 100)
       above_unlimited.carrier_lines.create(price: 90)
       above_unlimited.carrier_lines.create(price: 35)
@@ -279,7 +303,9 @@ att = Carrier.create(name:'AT&T')
     soft_cap: 1,
     max_lines: 10,
     auto_pay: 10,
-    max_auto_pay: 10)
+    max_auto_pay: 10,
+    senior_pricing: false,
+    military_pricing: false)
       flex_share_1gb.carrier_lines.create(price: 20)
       flex_share_1gb.carrier_lines.create(price: 20)
       flex_share_1gb.carrier_lines.create(price: 20)
@@ -301,7 +327,9 @@ att = Carrier.create(name:'AT&T')
     soft_cap: 5,
     max_lines: 10,
     auto_pay: 10,
-    max_auto_pay: 10)
+    max_auto_pay: 10,
+    senior_pricing: false,
+    military_pricing: false)
       flex_share_5gb.carrier_lines.create(price: 20)
       flex_share_5gb.carrier_lines.create(price: 20)
       flex_share_5gb.carrier_lines.create(price: 20)
@@ -323,7 +351,9 @@ att = Carrier.create(name:'AT&T')
     soft_cap: 10,
     max_lines: 10,
     auto_pay: 10,
-    max_auto_pay: 10)
+    max_auto_pay: 10,
+    senior_pricing: false,
+    military_pricing: false)
       flex_share_10gb.carrier_lines.create(price: 20)
       flex_share_10gb.carrier_lines.create(price: 20)
       flex_share_10gb.carrier_lines.create(price: 20)
@@ -345,7 +375,9 @@ att = Carrier.create(name:'AT&T')
     soft_cap: 20,
     max_lines: 10,
     auto_pay: 10,
-    max_auto_pay: 10)
+    max_auto_pay: 10,
+    senior_pricing: false,
+    military_pricing: false)
       flex_share_20gb.carrier_lines.create(price: 20)
       flex_share_20gb.carrier_lines.create(price: 20)
       flex_share_20gb.carrier_lines.create(price: 20)
@@ -367,7 +399,9 @@ att = Carrier.create(name:'AT&T')
     soft_cap: 0,
     max_lines: 10,
     auto_pay: 10,
-    max_auto_pay: 10)
+    max_auto_pay: 10,
+    senior_pricing: false,
+    military_pricing: false)
       unlimited_choice.carrier_lines.create(price: 75)
       unlimited_choice.carrier_lines.create(price: 65)
       unlimited_choice.carrier_lines.create(price: 20)
@@ -389,7 +423,9 @@ att = Carrier.create(name:'AT&T')
     soft_cap: 22,
     max_lines: 10,
     auto_pay: 10,
-    max_auto_pay: 10)
+    max_auto_pay: 10,
+    senior_pricing: false,
+    military_pricing: false)
       unlimited_plus.carrier_lines.create(price: 90)
       unlimited_plus.carrier_lines.create(price: 80)
       unlimited_plus.carrier_lines.create(price: 20)
@@ -417,7 +453,9 @@ sprint = Carrier.create(name:'Sprint')
     soft_cap: 2,
     max_lines: 1,
     auto_pay: 0,
-    max_auto_pay: 0)
+    max_auto_pay: 0,
+    senior_pricing: false,
+    military_pricing: false)
       two_gb.carrier_lines.create(price: 40)
 
   unlimited_freedom_promo = sprint.carrier_plans.create(
@@ -430,7 +468,9 @@ sprint = Carrier.create(name:'Sprint')
     soft_cap: 23,
     max_lines: 10,
     auto_pay: 5,
-    max_auto_pay: 50)
+    max_auto_pay: 50,
+    senior_pricing: false,
+    military_pricing: false)
       unlimited_freedom_promo.carrier_lines.create(price: 65)
       unlimited_freedom_promo.carrier_lines.create(price: 45)
       unlimited_freedom_promo.carrier_lines.create(price: 5)
@@ -452,7 +492,9 @@ sprint = Carrier.create(name:'Sprint')
     soft_cap: 23,
     max_lines: 10,
     auto_pay: 5,
-    max_auto_pay: 50)
+    max_auto_pay: 50,
+    senior_pricing: false,
+    military_pricing: false)
       unlimited_freedom.carrier_lines.create(price: 65)
       unlimited_freedom.carrier_lines.create(price: 45)
       unlimited_freedom.carrier_lines.create(price: 35)
@@ -468,7 +510,7 @@ sprint = Carrier.create(name:'Sprint')
 
     #Quiz 1
 
-    plan_one = UserPlan.create(line_quantity: 5, auto_pay: true, senior_pricing: false, military_pricing: false)
+    plan_one = UserPlan.create(line_quantity: 5, auto_pay: false, senior_pricing: false, military_pricing: false)
       plan_one.user_lines.create(data_amount: 10, hotspot: 5, hd_video: true)
       plan_one.user_lines.create(data_amount: 8, hotspot: 2, hd_video: true)
       plan_one.user_lines.create(data_amount: 5, hotspot: 0, hd_video: true)
@@ -477,6 +519,6 @@ sprint = Carrier.create(name:'Sprint')
     
     # Quiz 2
 
-    plan_two = UserPlan.create(line_quantity: 2, auto_pay: true, senior_pricing: false, military_pricing: false)
-      plan_two.user_lines.create(data_amount: Float::INFINITY, hotspot: 5, hd_video: true)
-      plan_two.user_lines.create(data_amount: 8, hotspot: 0, hd_video: true)
+    plan_two = UserPlan.create(line_quantity: 2, auto_pay: false, senior_pricing: false, military_pricing: false)
+      plan_two.user_lines.create(data_amount: 2, hotspot: 5, hd_video: true)
+      plan_two.user_lines.create(data_amount: 2, hotspot: 0, hd_video: true)
