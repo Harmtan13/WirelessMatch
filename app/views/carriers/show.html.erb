@@ -5,13 +5,13 @@
 
 <% @plans.each do |plan|%>
   <h2><%=plan.name %></h2>
-  <p>Data Amount: <%= plan.data_amount%></p>
+  <p>Data Amount: <%= plan.data_gb%></p>
   <p>Data Price: <%= number_to_currency(plan.data_price)%></p>
 
   <% plan.carrier_lines.each.with_index(1) do |line, index| %>
-    <div><%= "Line-#{index}:" %> <%= number_to_currency(line.price) %></div>
+    <div><%= "Line-#{index}:" %> <%= number_to_currency(line.price, precision: 0) %></div>
   <%end%>
   <br>
-  <b>Plan-Total: <%= number_to_currency(plan.carrier_lines.sum(:price))%></b>
+  <b>Plan-Total: <%= number_to_currency(plan.carrier_lines.sum(:price), precision: 0)%></b>
   <hr>
 <% end %>

@@ -6,4 +6,5 @@ class Carrier < ApplicationRecord
                                             attrs['data_amount'].blank? ||
                                             attrs['data_price'].blank?)
                                           }
+
 end
