@@ -1,0 +1,2 @@
+class PlanRecommendationsController < ApplicationController
+end

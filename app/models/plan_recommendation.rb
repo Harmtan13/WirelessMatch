@@ -1,0 +1,2 @@
+class PlanRecommendation < ApplicationRecord
+end
