@@ -41,7 +41,7 @@ class CarriersController < ApplicationController
   end
 
   def show
-    @plans = @carrier.carrier_plans
+    @plans = @carrier.carrier_plans 
   end
 
   def destroy
