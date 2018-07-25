@@ -1,0 +1,6 @@
+<h1>Plan Recommendations</h1>
+
+<% @carriers.each do |carrier|%>
+  <h2><%= carrier.name %></h2>
+  <%= @plan.qualified_plans%>
+<% end %>

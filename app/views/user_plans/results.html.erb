@@ -1,0 +1,13 @@
+<h1>Plan Requirements</h1>
+
+<div>Lines Required:  <%= @quiz.line_quantity%></div>
+<div>Auto-Pay: <%= @quiz.auto_pay%></div>
+<div>Senior Discount: <%= @quiz.senior_pricing%></div>
+<div>Military Pricing: <%= @quiz.military_pricing%></div>
+<div>Total Data: <%= @quiz.user_lines.sum(:data_amount)%></div>
+  <% @quiz.user_lines.each.with_index(1) do |line, index| %>
+  <h4> <%= "Line-#{index}"%> </h4>
+    <div>Data Needed: <%= line.data_amount %></div>
+    <div>Hotspot Needed: <%= line.hotspot %></div>
+    <div>HD Video: <%= line.hd_video %></div>
+  <% end %>
