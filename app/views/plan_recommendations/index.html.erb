@@ -2,5 +2,7 @@
 
 <% @carriers.each do |carrier|%>
   <h2><%= carrier.name %></h2>
-  <%= @plan.qualified_plans%>
+  <% if carrier.name == "T-Mobile"%>
+    <%= @tmo_plan.total_user_data %>
+  <% end %>
 <% end %>
