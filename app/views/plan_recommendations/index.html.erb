@@ -2,14 +2,14 @@
 
 <h3><%= @tmo.name %></h3>
   <% @tmo_plan.line_pricing.each.with_index(1) do |line, index|%>
-    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price) %> - <%= @tmo_plan.hd_video[index-1].name%></p>
+    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @tmo_plan.hd_video[index-1].name%></p>
   <% end %>
 
-  <p>Total: <%= number_to_currency(@tmo_plan.total_price) %></p>
+  <p>Total: <%= number_to_currency(@tmo_plan.total_price, precision: 0) %></p>
 
 <h3><%= @verizon.name %></h3>
   <% @verizon_plan.line_pricing.each.with_index(1) do |line, index|%>
-    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price) %> - <%= @verizon_plan.hd_video[index-1].name%></p>
+    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @verizon_plan.hd_video[index-1].name%></p>
   <% end %>
 
   <p>Total: <%= number_to_currency(@verizon_plan.total_price, precision: 0) %></p>
