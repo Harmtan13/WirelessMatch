@@ -8,9 +8,12 @@
 
     <br>
     
-    <% @tmo_plan.hd_video.each.with_index(1) do |line, index|%>
-      <p><%= "Line-#{index}"%>: <%= line.name %></p>
+    <% @tmo_plan.line_pricing.each.with_index(1) do |line, index|%>
+      <p><%= "Line-#{index}"%>: <%= @tmo_plan.hd_video[index-1].name%> <%= number_to_currency(line.price) %></p>
     <% end %>
+
+    <p>Total: <%= number_to_currency(@tmo_plan.total_price) %></p>
+
 <h3><%= @verizon.name %></h3>
 
 <h3><%= @att.name %></h3>

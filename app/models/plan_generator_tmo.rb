@@ -62,4 +62,23 @@ class PlanGeneratorTmo
     end
     plans
   end
+
+  def line_pricing
+    plans = hd_video
+    price = []
+
+    plans.each.with_index do |plan, index|
+      price << plan.carrier_lines[index]
+    end
+    price
+  end
+
+  def total_price
+    total_price = 0
+
+    line_pricing.each do |line|
+      total_price += line.price
+    end
+    total_price
+  end
 end
