@@ -1,49 +1,90 @@
 class PlanGeneratorVerizon
-  attr_accessor :carrier, :plans, :quiz
+  attr_accessor :carrier, :plans, :quiz, :unlimited_data
 
   def initialize(carrier, plans, quiz)
     @carrier = carrier
     @plans = plans
     @quiz = quiz
+    @unlimited_data = Float::INFINITY
   end
 
-  def senior_plans
-    @plans.where(senior_pricing: true)
-  end
+  def customer_type
+    consumer_plans = @plans.where(
+      senior_pricing:false, 
+      military_pricing:false
+      )
 
-  def military_plans
-    @plans.where(military_pricing: true)
-  end
+    senior_plans = @plans.where(
+      senior_pricing: true
+      )
 
-  def bucket_plans
-    @plans.where.not(data_amount: Float::INFINITY, senior_pricing:true, military_pricing:true)
-  end
+    military_plans = @plans.where(
+      military_pricing: true
+      )
 
-  def unlimited_plans
-    @plans.where(data_amount: Float::INFINITY, senior_pricing:false, military_pricing:false)
+    if @quiz.senior_pricing?
+      senior_plans
+    elsif @quiz.military_pricing?
+      military_plans
+    else
+      consumer_plans
+    end
   end
 
   def total_data
     @quiz.user_lines.sum(:data_amount)
   end
 
-  #Need to find better way to sort
   def sort_plans
-    if total_data < Float::INFINITY
+    unlimited_plans = customer_type.where(data_amount: @unlimited_data)
+    bucket_plans = customer_type.where(data_amount: 0..100)
+
+    if total_data == @unlimited_data || total_data > bucket_plans.last.data_amount
       unlimited_plans
     else
-      unlimited_plans
+      bucket_plans
     end
   end
 
-  def qualified_plans
-    if @quiz.senior_pricing?
-      senior_plans
-    elsif @quiz.military_pricing?
-      military_plans
+  def price_generator
+    if sort_plans.first.data_amount != @unlimited_data
+      bucket_line_pricing
     else
-      sort_plans
+      unlimited_line_pricing
     end
+  end
+
+  def bucket_line_pricing
+    line_count = @quiz.user_lines.count
+    plan = bucket_plan_sorter
+    price = []
+
+      line_count.times do |line|
+        price << plan.carrier_lines[line]
+      end
+    price
+  end
+
+  def bucket_plan_sorter
+    plans = sort_plans
+    available_plans = []
+
+    plans.each do |plan|
+      if total_data <= plan.data_amount && @quiz.user_lines.count <= plan.carrier_lines.count
+        available_plans << plan
+      end
+    end
+    available_plans.first
+  end
+
+  def unlimited_line_pricing
+    plans = hd_video
+    price = []
+
+    plans.each.with_index do |plan, index|
+      price << plan.carrier_lines[index]
+    end
+    price
   end
 
   def hotspot
@@ -53,7 +94,7 @@ class PlanGeneratorVerizon
     lines.each do |line|
       temp_plans = []
 
-      qualified_plans.each do |plan|
+      sort_plans.each do |plan|
         if line.hotspot <= plan.hotspot_lte
           temp_plans << plan
         end
@@ -80,20 +121,35 @@ class PlanGeneratorVerizon
     plans
   end
 
-  def line_pricing
-    plans = hd_video
-    price = []
-
-    plans.each.with_index do |plan, index|
-      price << plan.carrier_lines[index]
+  def plan_name
+    if sort_plans.first.data_amount == @unlimited_data
+      "Mix & Match Unlimited"
+    else
+      bucket_plan_sorter.name
     end
-    price
   end
 
   def total_price
+    if sort_plans.first.data_amount == @unlimited_data
+      unlimited_price_total
+    else
+      bucket_price_total
+    end
+  end
+
+  def unlimited_price_total
     total_price = 0
 
-    line_pricing.each do |line|
+    unlimited_line_pricing.each do |line|
+      total_price += line.price
+    end
+    total_price
+  end
+
+  def bucket_price_total
+    total_price = bucket_plan_sorter.data_price
+
+    bucket_line_pricing.each do |line|
       total_price += line.price
     end
     total_price

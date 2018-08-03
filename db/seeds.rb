@@ -19,7 +19,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_55.carrier_lines.create(price: 25)
 
   military_one = tmo.carrier_plans.create(
-    name: 'T-Mobile One Military', 
+    name: 'One Military', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: false,
@@ -45,7 +45,7 @@ tmo = Carrier.create(name:'T-Mobile')
       military_one.carrier_lines.create(price: 30)
 
   tmo_one = tmo.carrier_plans.create(
-    name: 'T-Mobile One', 
+    name: 'One', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: false,
@@ -71,7 +71,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_one.carrier_lines.create(price: 25)
 
   tmo_one_plus = tmo.carrier_plans.create(
-    name: 'T-Mobile One Plus', 
+    name: 'One Plus', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
@@ -97,7 +97,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_one_plus.carrier_lines.create(price: 25+10)
 
   tmo_one_plus_international = tmo.carrier_plans.create(
-    name: 'T-Mobile One Plus International', 
+    name: 'One Plus International', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
@@ -508,17 +508,53 @@ sprint = Carrier.create(name:'Sprint')
 
     puts 'Sprint Plans created!'
 
-    #Quiz 1
-
-    plan_one = UserPlan.create(line_quantity: 5, auto_pay: false, senior_pricing: false, military_pricing: false)
-      plan_one.user_lines.create(data_amount: 10, hotspot: 15, hd_video: false)
-      plan_one.user_lines.create(data_amount: 8, hotspot: 5, hd_video: true)
-      plan_one.user_lines.create(data_amount: 5, hotspot: 2, hd_video: false)
-      plan_one.user_lines.create(data_amount: 3, hotspot: 0, hd_video: true)
-      plan_one.user_lines.create(data_amount: 1, hotspot: 0, hd_video: false)
+  #Quiz 1
+  plan_one = UserPlan.create(
+    line_quantity: 5, 
+    auto_pay: false, 
+    senior_pricing: false, 
+    military_pricing: false
+    )
+      plan_one.user_lines.create(
+        data_amount: 10, 
+        hotspot: 16, 
+        hd_video: false
+        )
+      plan_one.user_lines.create(
+        data_amount: 8, 
+        hotspot: 5, 
+        hd_video: true
+        )
+      plan_one.user_lines.create(
+        data_amount: 5, 
+        hotspot: 2, 
+        hd_video: false
+        )
+      plan_one.user_lines.create(
+        data_amount: 3, 
+        hotspot: 0, 
+        hd_video: true
+        )
+      plan_one.user_lines.create(
+        data_amount: 1, 
+        hotspot: 0, 
+        hd_video: false
+        )
     
-    # Quiz 2
-
-    plan_two = UserPlan.create(line_quantity: 2, auto_pay: false, senior_pricing: false, military_pricing: false)
-      plan_two.user_lines.create(data_amount: 2, hotspot: 5, hd_video: true)
-      plan_two.user_lines.create(data_amount: 2, hotspot: 0, hd_video: true)
+  # Quiz 2
+  plan_two = UserPlan.create(
+    line_quantity: 2, 
+    auto_pay: false, 
+    senior_pricing: false, 
+    military_pricing: false
+    )
+      plan_two.user_lines.create(
+        data_amount: 5,
+        hotspot: 0,
+        hd_video: false
+        )
+      plan_two.user_lines.create(
+        data_amount: 2,
+        hotspot: 0,
+        hd_video: false
+        )
