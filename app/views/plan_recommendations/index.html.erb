@@ -10,10 +10,10 @@
 <h3><%= @verizon.name %></h3>
 
   <p><%= @verizon_plan.plan_name%></p>
-  <p>Data-Price: <%= number_to_currency(@verizon_plan.bucket_plan_sorter.data_price, precision: 0)%></p>
+  <p><%= "Data-Price: #{number_to_currency(@verizon_plan.data_price, precision: 0)}" if @verizon_plan.data_price %></p>
 
   <% @verizon_plan.price_generator.each.with_index(1) do |plan, index| %>
-    <p><%= "Line-#{index}"%>: <%= number_to_currency(plan.price, precision: 0) %></p>
+    <p><%= "Line-#{index}"%>: <%= number_to_currency(plan.price, precision: 0) %> <%=" - #{@verizon_plan.hd_video[index-1].name if @verizon_plan.unlimited_data_name}"%></p>
   <% end %>
 
   <p>Total: <%= number_to_currency(@verizon_plan.total_price, precision: 0) %></p>

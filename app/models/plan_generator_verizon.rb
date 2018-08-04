@@ -154,4 +154,16 @@ class PlanGeneratorVerizon
     end
     total_price
   end
+
+  def data_price
+    if sort_plans.first.data_amount != @unlimited_data
+      bucket_plan_sorter.data_price
+    end
+  end
+
+  def unlimited_data_name
+    if sort_plans.first.data_amount == @unlimited_data
+      true
+    end
+  end
 end
