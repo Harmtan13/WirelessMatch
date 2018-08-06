@@ -1,3 +1,4 @@
-#To-Do List
+# To-Do List
 
-* Verizon Hotspot needs to trigger unllimited plans
+### Verizon 
+* Hotspot needs to trigger unllimited plan
