@@ -389,34 +389,25 @@ att = Carrier.create(name:'AT&T')
       flex_share_20gb.carrier_lines.create(price: 20)
       flex_share_20gb.carrier_lines.create(price: 20)
 
-  unlimited_choice = att.carrier_plans.create(
-    name: 'Unlimited-Choice', 
+  unlimited_single_line = att.carrier_plans.create(
+    name: 'Unlimited & More', 
     data_amount: Float::INFINITY, 
-    data_price: 0,
+    data_price: 55,
     hd_video: false,
     hotspot_lte: 0,
     hotspot_3g: 0,
     soft_cap: 0,
-    max_lines: 10,
+    max_lines: 1,
     auto_pay: 10,
     max_auto_pay: 10,
     senior_pricing: false,
     military_pricing: false)
-      unlimited_choice.carrier_lines.create(price: 75)
-      unlimited_choice.carrier_lines.create(price: 65)
-      unlimited_choice.carrier_lines.create(price: 20)
-      unlimited_choice.carrier_lines.create(price: 20)
-      unlimited_choice.carrier_lines.create(price: 30)
-      unlimited_choice.carrier_lines.create(price: 30)
-      unlimited_choice.carrier_lines.create(price: 30)
-      unlimited_choice.carrier_lines.create(price: 30)
-      unlimited_choice.carrier_lines.create(price: 30)
-      unlimited_choice.carrier_lines.create(price: 30)
+    unlimited_single_line.carrier_lines.create(price: 35)
 
-  unlimited_plus = att.carrier_plans.create(
-    name: 'Unlimited-Plus', 
+  unlimited_premium_single_line = att.carrier_plans.create(
+    name: 'Unlimited & More Premium', 
     data_amount: Float::INFINITY, 
-    data_price: 0,
+    data_price: 65,
     hd_video: true,
     hotspot_lte: 15,
     hotspot_3g: 0,
@@ -426,16 +417,55 @@ att = Carrier.create(name:'AT&T')
     max_auto_pay: 10,
     senior_pricing: false,
     military_pricing: false)
-      unlimited_plus.carrier_lines.create(price: 90)
-      unlimited_plus.carrier_lines.create(price: 80)
-      unlimited_plus.carrier_lines.create(price: 20)
-      unlimited_plus.carrier_lines.create(price: 20)
-      unlimited_plus.carrier_lines.create(price: 30)
-      unlimited_plus.carrier_lines.create(price: 30)
-      unlimited_plus.carrier_lines.create(price: 30)
-      unlimited_plus.carrier_lines.create(price: 30)
-      unlimited_plus.carrier_lines.create(price: 30)
-      unlimited_plus.carrier_lines.create(price: 30)
+      unlimited_premium_single_line.carrier_lines.create(price: 35)
+
+  unlimited = att.carrier_plans.create(
+    name: 'Unlimited & More', 
+    data_amount: Float::INFINITY, 
+    data_price: 95,
+    hd_video: false,
+    hotspot_lte: 0,
+    hotspot_3g: 0,
+    soft_cap: 0,
+    max_lines: 10,
+    auto_pay: 20,
+    max_auto_pay: 20,
+    senior_pricing: false,
+    military_pricing: false)
+      unlimited.carrier_lines.create(price: 35)
+      unlimited.carrier_lines.create(price: 35)
+      unlimited.carrier_lines.create(price: 20)
+      unlimited.carrier_lines.create(price: 15)
+      unlimited.carrier_lines.create(price: 35)
+      unlimited.carrier_lines.create(price: 35)
+      unlimited.carrier_lines.create(price: 35)
+      unlimited.carrier_lines.create(price: 35)
+      unlimited.carrier_lines.create(price: 35)
+      unlimited.carrier_lines.create(price: 35)
+
+  unlimited_premium = att.carrier_plans.create(
+    name: 'Unlimited & More Premium', 
+    data_amount: Float::INFINITY, 
+    data_price: 120,
+    hd_video: true,
+    hotspot_lte: 15,
+    hotspot_3g: 0,
+    soft_cap: 22,
+    max_lines: 10,
+    auto_pay: 20,
+    max_auto_pay: 20,
+    senior_pricing: false,
+    military_pricing: false)
+      unlimited_premium.carrier_lines.create(price: 35)
+      unlimited_premium.carrier_lines.create(price: 35)
+      unlimited_premium.carrier_lines.create(price: 20)
+      unlimited_premium.carrier_lines.create(price: 20)
+      unlimited_premium.carrier_lines.create(price: 35)
+      unlimited_premium.carrier_lines.create(price: 35)
+      unlimited_premium.carrier_lines.create(price: 35)
+      unlimited_premium.carrier_lines.create(price: 35)
+      unlimited_premium.carrier_lines.create(price: 35)
+      unlimited_premium.carrier_lines.create(price: 35)
 
     puts 'AT&T Plans created!'
 
