@@ -60,6 +60,7 @@ class PlanGeneratorAtt
     plans
   end
 
+  #Don't love this solution, but works for now. 
   def hd_video_sort
     plans = []
     hd_video = false
@@ -106,6 +107,18 @@ class PlanGeneratorAtt
     end
 
     final_plan
+  end
+
+  def line_pricing
+    line_count = @quiz.user_lines.count
+    plan = plan_calculations
+    lines = []
+
+    line_count.times do |count|
+      lines << plan.carrier_lines[count]
+    end
+
+    lines
   end
 
   def plan_total(plan)
