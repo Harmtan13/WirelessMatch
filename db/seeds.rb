@@ -558,7 +558,7 @@ sprint = Carrier.create(name:'Sprint')
       plan_one.user_lines.create(
         data_amount: 5, 
         hotspot: 2, 
-        hd_video: false
+        hd_video: true
         )
       plan_one.user_lines.create(
         data_amount: 3, 
@@ -579,7 +579,7 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_two.user_lines.create(
-        data_amount: 8,
+        data_amount: 20,
         hotspot: 0,
         hd_video: true
         )

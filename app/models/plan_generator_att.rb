@@ -62,14 +62,23 @@ class PlanGeneratorAtt
 
   def hd_video_sort
     plans = []
+    hd_video = false
+
     @quiz.user_lines.each do |line|
-      hotspot_sort.each do |plan|
-        if line.hd_video == true && plan.hd_video == true
-          plans << plan
-        end
+      break if hd_video == true
+      hd_video = line.hd_video
+    end
+
+    hotspot_sort.each do |plan|
+      if hd_video == true && plan.hd_video == true
+        plans << plan
+      elsif hd_video == false 
+        plans << plan
       end
     end
+
     plans.uniq
+    
   end
 
   def line_count_sort

@@ -11,5 +11,5 @@
 * Mention that Taxes are included
 
 ###
-* Fix HD-Video sort method
+* HD method working, Don't love the solution, will come back later to improve.
 * Fix Per line count Iterating on view page
