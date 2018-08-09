@@ -9,3 +9,7 @@
 ### T-Mobile
 * Calculate Auto-pay
 * Mention that Taxes are included
+
+###
+* Fix HD-Video sort method
+* Fix Per line count Iterating on view page
