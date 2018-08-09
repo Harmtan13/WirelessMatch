@@ -32,7 +32,7 @@ class UserPlansController < ApplicationController
   end
 
   def results
-    @quiz = UserPlan.first
+    @quiz = UserPlan.last
   end
 
   def user_params

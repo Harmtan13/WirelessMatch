@@ -390,7 +390,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_20gb.carrier_lines.create(price: 20)
 
   unlimited_single_line = att.carrier_plans.create(
-    name: 'Unlimited & More', 
+    name: 'Unlimited & More Single', 
     data_amount: Float::INFINITY, 
     data_price: 55,
     hd_video: false,
@@ -405,7 +405,7 @@ att = Carrier.create(name:'AT&T')
     unlimited_single_line.carrier_lines.create(price: 35)
 
   unlimited_premium_single_line = att.carrier_plans.create(
-    name: 'Unlimited & More Premium', 
+    name: 'Unlimited & More Premium Single', 
     data_amount: Float::INFINITY, 
     data_price: 65,
     hd_video: true,
@@ -553,7 +553,7 @@ sprint = Carrier.create(name:'Sprint')
       plan_one.user_lines.create(
         data_amount: 8, 
         hotspot: 5, 
-        hd_video: true
+        hd_video: false
         )
       plan_one.user_lines.create(
         data_amount: 5, 
@@ -563,7 +563,7 @@ sprint = Carrier.create(name:'Sprint')
       plan_one.user_lines.create(
         data_amount: 3, 
         hotspot: 0, 
-        hd_video: true
+        hd_video: false
         )
       plan_one.user_lines.create(
         data_amount: 1, 
@@ -573,18 +573,15 @@ sprint = Carrier.create(name:'Sprint')
     
   # Quiz 2
   plan_two = UserPlan.create(
-    line_quantity: 2, 
+    line_quantity: 1, 
     auto_pay: false, 
     senior_pricing: false, 
     military_pricing: false
     )
       plan_two.user_lines.create(
-        data_amount: 5,
+        data_amount: 8,
         hotspot: 0,
-        hd_video: false
+        hd_video: true
         )
-      plan_two.user_lines.create(
-        data_amount: 2,
-        hotspot: 0,
-        hd_video: false
-        )
+
+  puts 'Two Quizzes created'

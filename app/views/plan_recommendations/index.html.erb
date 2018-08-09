@@ -2,22 +2,39 @@
 
 <h3><%= @tmo.name %></h3>
   <% @tmo_plan.line_pricing.each.with_index(1) do |line, index|%>
-    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @tmo_plan.hd_video[index-1].name%></p>
+    <p>
+        <%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %>
+         - 
+        <%= @tmo_plan.hd_video[index-1].name%>
+    </p>
   <% end %>
 
   <p>Total: <%= number_to_currency(@tmo_plan.total_price, precision: 0) %></p>
 
 <h3><%= @verizon.name %></h3>
-
   <p><%= @verizon_plan.plan_name%></p>
   <p><%= "Data-Price: #{number_to_currency(@verizon_plan.data_price, precision: 0)}" if @verizon_plan.data_price %></p>
 
   <% @verizon_plan.price_generator.each.with_index(1) do |plan, index| %>
-    <p><%= "Line-#{index}"%>: <%= number_to_currency(plan.price, precision: 0) %> <%=" - #{@verizon_plan.hd_video[index-1].name}" if @verizon_plan.unlimited_data_name%></p>
+    <p>
+      <%= "Line-#{index}"%>: 
+      <%= number_to_currency(plan.price, precision: 0) %> 
+      <%=" - #{@verizon_plan.hd_video[index-1].name}" if @verizon_plan.unlimited_data_name%>
+    </p>
   <% end %>
 
   <p>Total: <%= number_to_currency(@verizon_plan.total_price, precision: 0) %></p>
 
 <h3><%= @att.name %></h3>
 
-<h3><%= @sprint.name %></h3>
+  <p><%= @att_plan.plan_calculations.name %></p>
+  <p>Data-Price : <%= number_to_currency(@att_plan.plan_calculations.data_price) %></p>
+  <% @att_plan.plan_calculations.carrier_lines.each.with_index(1) do |line, index| %>
+    <p>
+    <%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %>
+        </p>
+  <% end %>
+
+  <p>Total: <%= number_to_currency(@att_plan.plan_total(@att_plan.plan_calculations), precision: 0) %></p>
+
+<h3><%= @sprint.name %></h3><p>
