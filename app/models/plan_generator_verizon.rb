@@ -78,11 +78,12 @@ class PlanGeneratorVerizon
   end
 
   def unlimited_line_pricing
+    line_count = @quiz.user_lines.count
     plans = hd_video
     price = []
 
-    plans.each.with_index do |plan, index|
-      price << plan.carrier_lines[index]
+    plans.each do |plan|
+      price << plan.carrier_lines[line_count]
     end
     price
   end

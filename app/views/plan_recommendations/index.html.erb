@@ -29,11 +29,10 @@
 
   <p><%= @att_plan.plan_calculations.name %></p>
   <p>Data-Price : <%= number_to_currency(@att_plan.plan_calculations.data_price) %></p>
-  <% @att_plan.plan_calculations.carrier_lines.each.with_index(1) do |line, index| %>
-    <p>
-    <%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %>
-        </p>
-  <% end %>
+  
+    <% @att_plan.line_pricing.each.with_index(1) do |line, index| %>
+    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %></p>
+    <% end %>
 
   <p>Total: <%= number_to_currency(@att_plan.plan_total(@att_plan.plan_calculations), precision: 0) %></p>
 

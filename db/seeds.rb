@@ -546,22 +546,22 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_one.user_lines.create(
-        data_amount: 10, 
-        hotspot: 16, 
+        data_amount: 2, 
+        hotspot: 0, 
         hd_video: false
         )
       plan_one.user_lines.create(
-        data_amount: 8, 
-        hotspot: 5, 
+        data_amount: 2, 
+        hotspot: 0, 
         hd_video: false
         )
       plan_one.user_lines.create(
-        data_amount: 5, 
-        hotspot: 2, 
-        hd_video: true
+        data_amount: 2, 
+        hotspot: 0, 
+        hd_video: false
         )
       plan_one.user_lines.create(
-        data_amount: 3, 
+        data_amount: 1, 
         hotspot: 0, 
         hd_video: false
         )
@@ -579,7 +579,7 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_two.user_lines.create(
-        data_amount: 20,
+        data_amount: 4,
         hotspot: 0,
         hd_video: true
         )
