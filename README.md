@@ -5,7 +5,8 @@
 * Take into account Taxes not being included
 * Calculate Auto-pay
 
-### T-Mobile
+### T-Mobile 
+* Re-write to account for new plans
 * Calculate Auto-pay
 * Mention that Taxes are included
 
