@@ -546,24 +546,24 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_one.user_lines.create(
-        data_amount: 2, 
-        hotspot: 0, 
+        data_amount: 50, 
+        hotspot: 15, 
         hd_video: false
         )
       plan_one.user_lines.create(
-        data_amount: 2, 
+        data_amount: 5, 
         hotspot: 0, 
-        hd_video: false
+        hd_video: true
         )
       plan_one.user_lines.create(
-        data_amount: 2, 
-        hotspot: 0, 
-        hd_video: false
+        data_amount: 25, 
+        hotspot: 15, 
+        hd_video: true
         )
       plan_one.user_lines.create(
-        data_amount: 1, 
+        data_amount: 5, 
         hotspot: 0, 
-        hd_video: false
+        hd_video: true
         )
       plan_one.user_lines.create(
         data_amount: 2, 
@@ -579,9 +579,9 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_two.user_lines.create(
-        data_amount: 4,
-        hotspot: 0,
+        data_amount: 50, 
+        hotspot: 9, 
         hd_video: false
-      )
+        )
 
   puts 'Two Quizzes created'
