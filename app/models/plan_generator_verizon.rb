@@ -32,70 +32,166 @@ class PlanGeneratorVerizon
   end
 
   def total_data
-    @quiz.user_lines.sum(:data_amount)
+    bucket_plan = @quiz.user_lines.sum(:data_amount)
   end
 
-  def sort_plans
-    unlimited_plans = customer_type.where(data_amount: @unlimited_data)
-    bucket_plans = customer_type.where(data_amount: 0..100)
+  def plan_calculation
+    bucket_plan = bucket_plan_calculation
+    plan = ''
 
-    if total_data == @unlimited_data || total_data > bucket_plans.last.data_amount
-      unlimited_plans
+
+    if bucket_hotspot_sort == []
+      unlimited_hd_video
     else
-      bucket_plans
+      if bucket_plan_total(bucket_plan) >= unlimited_plan_total
+        unlimited_hd_video
+      else
+        bucket_plan_calculation
+      end
     end
   end
 
-  def price_generator
-    if sort_plans.first.data_amount != @unlimited_data
-      bucket_line_pricing
-    else
+  def line_pricing
+    if plan_calculation == unlimited_hd_video
       unlimited_line_pricing
+    elsif plan_calculation == bucket_plan_calculation
+      bucket_line_pricing
     end
+  end
+
+  def plan_total
+    if plan_calculation == unlimited_hd_video
+      unlimited_plan_total
+    elsif plan_calculation == bucket_plan_calculation
+      bucket_plan_total(bucket_plan_calculation)
+    end
+  end
+
+  def plan_name
+    if plan_calculation == unlimited_hd_video
+      "Unlimited - Mix & Match"
+    elsif plan_calculation == bucket_plan_calculation
+      plan_calculation.name
+    end
+  end
+
+  def data_price
+    if plan_calculation == bucket_plan_calculation
+      bucket_plan_calculation.data_price
+    end
+  end
+
+# Bucket Plans
+  def bucket_plans
+    customer_type.where(data_amount:0...1000)
+  end
+
+  def bucket_plan_sort
+    plans = []
+
+    bucket_plans.each do |plan|
+      if plan.data_amount >= total_data
+        plans << plan
+      end
+    end
+    plans.uniq
+  end
+
+  def bucket_hd_video_sort
+    plans = []
+    hd_video = false
+
+    @quiz.user_lines.each do |line|
+      break if hd_video == true
+      hd_video = line.hd_video
+    end
+
+    bucket_plan_sort.each do |plan|
+      if hd_video == true && plan.hd_video == true
+        plans << plan
+      elsif hd_video == false 
+        plans << plan
+      end
+    end
+
+    plans.uniq
+  end
+
+  def bucket_hotspot_sort
+    plans = []
+    hotspot = @quiz.user_lines.sum(:hotspot)
+
+    bucket_hd_video_sort.each do |plan|
+      if plan.hotspot_lte >= hotspot
+        plans << plan
+      end
+    end
+
+    plans.uniq
+  end
+
+  def bucket_plan_total(plan)
+    line_count = @quiz.user_lines.count
+    price = plan.data_price
+
+    line_count.times do |line|
+      price += plan.carrier_lines[line].price
+    end
+    price
+  end
+
+  def line_count_sort
+    plans = []
+ 
+    bucket_hotspot_sort.each do |plan|
+      if @quiz.user_lines.count <= plan.carrier_lines.count
+        plans << plan
+      end
+    end
+
+    plans
+  end
+
+  def bucket_plan_calculation
+    final_plan = ''
+    price = 0
+
+    line_count_sort.each do |plan|
+      if bucket_plan_total(plan) <= price || price == 0
+        final_plan = plan
+        price = bucket_plan_total(plan)
+      end
+      final_plan
+    end
+
+    final_plan
   end
 
   def bucket_line_pricing
     line_count = @quiz.user_lines.count
-    plan = bucket_plan_sorter
-    price = []
+    plan = plan_calculation
+    lines = []
 
-      line_count.times do |line|
-        price << plan.carrier_lines[line]
-      end
-    price
-  end
-
-  def bucket_plan_sorter
-    plans = sort_plans
-    available_plans = []
-
-    plans.each do |plan|
-      if total_data <= plan.data_amount && @quiz.user_lines.count <= plan.carrier_lines.count
-        available_plans << plan
-      end
+    line_count.times do |count|
+      lines << plan.carrier_lines[count]
     end
-    available_plans.first
+
+    lines
   end
 
-  def unlimited_line_pricing
-    line_count = @quiz.user_lines.count
-    plans = hd_video
-    price = []
-
-    plans.each do |plan|
-      price << plan.carrier_lines[line_count]
-    end
-    price
+# Unlimited Plans
+  def unlimited_plans
+    customer_type.where(data_amount: @unlimited_data)
   end
 
-  def hotspot
+  def unlimited_hotspot
     lines = @quiz.user_lines
     plans = []
 
     lines.each do |line|
       temp_plans = []
 
-      sort_plans.each do |plan|
+      unlimited_plans.each do |plan|
         if line.hotspot <= plan.hotspot_lte
           temp_plans << plan
         end
@@ -105,14 +201,14 @@ class PlanGeneratorVerizon
 
     plans
   end
-
-  def hd_video
+  
+  def unlimited_hd_video
     lines = @quiz.user_lines
     plans = []
 
     lines.each.with_index do |line, index|
       temp_plans = []
-      hotspot[index].each do |plan|
+      unlimited_hotspot[index].each do |plan|
         if plan.hd_video == line.hd_video || plan.hotspot_lte > line.hotspot
           temp_plans << plan
         end
@@ -122,49 +218,30 @@ class PlanGeneratorVerizon
     plans
   end
 
-  def plan_name
-    if sort_plans.first.data_amount == @unlimited_data
-      "Mix & Match Unlimited"
-    else
-      bucket_plan_sorter.name
+  def unlimited_line_pricing
+    line_count = @quiz.user_lines.count - 1
+    plans = unlimited_hd_video
+    price = []
+
+    plans.each do |plan|
+      price << plan.carrier_lines[line_count]
     end
+    price
   end
 
-  def total_price
-    if sort_plans.first.data_amount == @unlimited_data
-      unlimited_price_total
-    else
-      bucket_price_total
-    end
-  end
-
-  def unlimited_price_total
-    total_price = 0
+  def unlimited_plan_total
+    price = 0
 
     unlimited_line_pricing.each do |line|
-      total_price += line.price
+      price += line.price
     end
-    total_price
+
+    price
   end
 
-  def bucket_price_total
-    total_price = bucket_plan_sorter.data_price
-
-    bucket_line_pricing.each do |line|
-      total_price += line.price
-    end
-    total_price
-  end
-
-  def data_price
-    if sort_plans.first.data_amount != @unlimited_data
-      bucket_plan_sorter.data_price
-    end
-  end
-
-  def unlimited_data_name
-    if sort_plans.first.data_amount == @unlimited_data
-      true
+  def unlimited_plan_name
+    if plan_calculation == unlimited_hd_video
+      unlimited_hd_video
     end
   end
 end

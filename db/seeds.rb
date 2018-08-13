@@ -566,7 +566,7 @@ sprint = Carrier.create(name:'Sprint')
         hd_video: false
         )
       plan_one.user_lines.create(
-        data_amount: 1, 
+        data_amount: 2, 
         hotspot: 0, 
         hd_video: false
         )
@@ -581,7 +581,7 @@ sprint = Carrier.create(name:'Sprint')
       plan_two.user_lines.create(
         data_amount: 4,
         hotspot: 0,
-        hd_video: true
-        )
+        hd_video: false
+      )
 
   puts 'Two Quizzes created'
