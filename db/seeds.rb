@@ -2,6 +2,46 @@
 
 tmo = Carrier.create(name:'T-Mobile')
 
+  tmo_essentials = tmo.carrier_plans.create(
+    name: 'T-Mobile Essentials', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: false,
+    hotspot_lte: 0,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 0,
+    max_lines: 6,
+    auto_pay: 5,
+    max_auto_pay: 30,
+    senior_pricing: false,
+    military_pricing: false)
+      tmo_essentials.carrier_lines.create(price: 65)
+      tmo_essentials.carrier_lines.create(price: 35)
+      tmo_essentials.carrier_lines.create(price: 20)
+      tmo_essentials.carrier_lines.create(price: 20)
+      tmo_essentials.carrier_lines.create(price: 20)
+      tmo_essentials.carrier_lines.create(price: 20)
+
+  tmo_essentials_hotpost = tmo.carrier_plans.create(
+    name: 'T-Mobile Essentials Hotspot Upgrade', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: false,
+    hotspot_lte: 10,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 0,
+    max_lines: 6,
+    auto_pay: 0,
+    max_auto_pay: 0,
+    senior_pricing: false,
+    military_pricing: false)
+      tmo_essentials_hotpost.carrier_lines.create(price: 10)
+      tmo_essentials_hotpost.carrier_lines.create(price: 10)
+      tmo_essentials_hotpost.carrier_lines.create(price: 10)
+      tmo_essentials_hotpost.carrier_lines.create(price: 10)
+      tmo_essentials_hotpost.carrier_lines.create(price: 10)
+      tmo_essentials_hotpost.carrier_lines.create(price: 10)
+
   tmo_55 = tmo.carrier_plans.create(
     name: 'Unlimited 55', 
     data_amount: Float::INFINITY,
@@ -75,7 +115,7 @@ tmo = Carrier.create(name:'T-Mobile')
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
-    hotspot_lte: 10,
+    hotspot_lte: 20,
     hotspot_3g: Float::INFINITY,
     soft_cap: 50,
     max_lines: 12,
@@ -83,25 +123,25 @@ tmo = Carrier.create(name:'T-Mobile')
     max_auto_pay: 40,
     senior_pricing: false,
     military_pricing: false)
-      tmo_one_plus.carrier_lines.create(price: 75+10)
-      tmo_one_plus.carrier_lines.create(price: 55+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
-      tmo_one_plus.carrier_lines.create(price: 25+10)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
+      tmo_one_plus.carrier_lines.create(price: 15)
 
-  tmo_one_plus_international = tmo.carrier_plans.create(
-    name: 'One Plus International', 
+  tmo_one_plus_family_pricing = tmo.carrier_plans.create(
+    name: 'One Plus Family-Pricing', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
-    hotspot_lte: Float::INFINITY,
+    hotspot_lte: 20,
     hotspot_3g: Float::INFINITY,
     soft_cap: 50,
     max_lines: 12,
@@ -109,18 +149,18 @@ tmo = Carrier.create(name:'T-Mobile')
     max_auto_pay: 40,
     senior_pricing: false,
     military_pricing: false)
-      tmo_one_plus_international.carrier_lines.create(price: 75+25)
-      tmo_one_plus_international.carrier_lines.create(price: 55+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
-      tmo_one_plus_international.carrier_lines.create(price: 25+25)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 10)
 
 puts 'T-Mobile Plans created!'
 
@@ -578,6 +618,12 @@ sprint = Carrier.create(name:'Sprint')
     senior_pricing: false, 
     military_pricing: false
     )
+      plan_two.user_lines.create(
+        data_amount: 50, 
+        hotspot: 9, 
+        hd_video: false
+        )
+
       plan_two.user_lines.create(
         data_amount: 50, 
         hotspot: 9, 
