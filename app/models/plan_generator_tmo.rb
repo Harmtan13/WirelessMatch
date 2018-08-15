@@ -7,78 +7,42 @@ class PlanGeneratorTmo
     @quiz = quiz
   end
 
-  def senior_plans
-    @plans.where(senior_pricing: true)
+  def consumer_mix_plans
+    @plans.where(mix_and_match: true,
+                 senior_pricing: false,
+                 military_pricing: false
+      )
   end
 
-  def military_plans
-    @plans.where(military_pricing: true)
+  def consumer_set_plans
+    @plans.where(mix_and_match: false,
+                 senior_pricing: false,
+                 military_pricing: false
+      )
   end
 
-  def unlimited_plans
-    @plans.where(data_amount: Float::INFINITY, senior_pricing:false, military_pricing:false)
+  def senior_mix_plans
+    @plans.where(mix_and_match: true,
+      military_pricing: false
+    )
   end
 
-  def qualified_plans
-    if @quiz.senior_pricing?
-      senior_plans
-    elsif @quiz.military_pricing?
-      military_plans
-    else
-       unlimited_plans
-    end
+  def senior_set_plans
+    @plans.where(mix_and_match: false,
+                 military_pricing: false
+    )
   end
 
-  def hotspot
-    lines = @quiz.user_lines
-    plans = []
-
-    lines.each do |line|
-      temp_plans = []
-
-      qualified_plans.each do |plan|
-        if line.hotspot <= plan.hotspot_lte
-          temp_plans << plan
-        end
-      end
-      plans << temp_plans
-    end
-
-    plans
+  def military_mix_plans
+    @plans.where(mix_and_match: true,
+      senior_pricing: false,
+    )
   end
 
-  def hd_video
-    lines = @quiz.user_lines
-    plans = []
-
-    lines.each.with_index do |line, index|
-      temp_plans = []
-      hotspot[index].each do |plan|
-        if plan.hd_video == line.hd_video || plan.hotspot_lte > line.hotspot
-          temp_plans << plan
-        end
-      end
-      plans << temp_plans.first
-    end
-    plans
+  def military_set_plans
+    @plans.where(mix_and_match: false,
+                 senior_pricing: false,
+    )
   end
 
-  def line_pricing
-    plans = hd_video
-    price = []
-
-    plans.each.with_index do |plan, index|
-      price << plan.carrier_lines[index]
-    end
-    price
-  end
-
-  def total_price
-    total_price = 0
-
-    line_pricing.each do |line|
-      total_price += line.price
-    end
-    total_price
-  end
 end
