@@ -15,11 +15,11 @@ class PlanGeneratorVerizon
       )
 
     senior_plans = @plans.where(
-      senior_pricing: true
+      military_pricing: false
       )
 
     military_plans = @plans.where(
-      military_pricing: true
+      senior_pricing: false
       )
 
     if @quiz.senior_pricing?
