@@ -627,60 +627,93 @@ sprint = Carrier.create(name:'Sprint')
     hotspot_lte: 2,
     hotspot_3g: 0,
     soft_cap: 2,
-    max_lines: 1,
+    max_lines: 10,
     auto_pay: 0,
     max_auto_pay: 0,
     senior_pricing: false,
     military_pricing: false)
       two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
+      two_gb.carrier_lines.create(price: 40)
 
-  unlimited_freedom_promo = sprint.carrier_plans.create(
-    name: 'Unlimited Freedom Promo', 
+  unlimited_basic_promo = sprint.carrier_plans.create(
+    name: 'Unlimited Basic Promo', 
     data_amount: Float::INFINITY, 
     data_price: 0,
-    hd_video: true,
-    hotspot_lte: 10,
+    hd_video: false,
+    hotspot_lte: 0,
     hotspot_3g: Float::INFINITY,
-    soft_cap: 23,
+    soft_cap: 50,
     max_lines: 10,
     auto_pay: 5,
     max_auto_pay: 50,
     senior_pricing: false,
     military_pricing: false)
-      unlimited_freedom_promo.carrier_lines.create(price: 65)
-      unlimited_freedom_promo.carrier_lines.create(price: 45)
-      unlimited_freedom_promo.carrier_lines.create(price: 5)
-      unlimited_freedom_promo.carrier_lines.create(price: 5)
-      unlimited_freedom_promo.carrier_lines.create(price: 5)
-      unlimited_freedom_promo.carrier_lines.create(price: 35)
-      unlimited_freedom_promo.carrier_lines.create(price: 35)
-      unlimited_freedom_promo.carrier_lines.create(price: 35)
-      unlimited_freedom_promo.carrier_lines.create(price: 35)
-      unlimited_freedom_promo.carrier_lines.create(price: 35)
+      unlimited_basic_promo.carrier_lines.create(price: 65)
+      unlimited_basic_promo.carrier_lines.create(price: 45)
+      unlimited_basic_promo.carrier_lines.create(price: 25)
+      unlimited_basic_promo.carrier_lines.create(price: 5)
+      unlimited_basic_promo.carrier_lines.create(price: 5)
+      unlimited_basic_promo.carrier_lines.create(price: 25)
+      unlimited_basic_promo.carrier_lines.create(price: 25)
+      unlimited_basic_promo.carrier_lines.create(price: 25)
+      unlimited_basic_promo.carrier_lines.create(price: 25)
+      unlimited_basic_promo.carrier_lines.create(price: 25)
 
-  unlimited_freedom = sprint.carrier_plans.create(
-    name: 'Unlimited Freedom', 
+  unlimited_basic = sprint.carrier_plans.create(
+    name: 'Unlimited Basic', 
     data_amount: Float::INFINITY, 
     data_price: 0,
-    hotspot_lte: 10,
-    hd_video: true,
+    hd_video: false,
+    hotspot_lte: 0,
     hotspot_3g: Float::INFINITY,
-    soft_cap: 23,
+    soft_cap: 50,
     max_lines: 10,
     auto_pay: 5,
     max_auto_pay: 50,
     senior_pricing: false,
     military_pricing: false)
-      unlimited_freedom.carrier_lines.create(price: 65)
-      unlimited_freedom.carrier_lines.create(price: 45)
-      unlimited_freedom.carrier_lines.create(price: 35)
-      unlimited_freedom.carrier_lines.create(price: 35)
-      unlimited_freedom.carrier_lines.create(price: 35)
-      unlimited_freedom.carrier_lines.create(price: 35)
-      unlimited_freedom.carrier_lines.create(price: 35)
-      unlimited_freedom.carrier_lines.create(price: 35)
-      unlimited_freedom.carrier_lines.create(price: 35)
-      unlimited_freedom.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 65)
+      unlimited_basic.carrier_lines.create(price: 45)
+      unlimited_basic.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 35)
+      unlimited_basic.carrier_lines.create(price: 35)
+
+  unlimited_plus = sprint.carrier_plans.create(
+    name: 'Unlimited Plus', 
+    data_amount: Float::INFINITY, 
+    data_price: 0,
+    hd_video: true,
+    hotspot_lte: 15,
+    hotspot_3g: Float::INFINITY,
+    soft_cap: 50,
+    max_lines: 10,
+    auto_pay: 5,
+    max_auto_pay: 50,
+    senior_pricing: false,
+    military_pricing: false)
+      unlimited_plus.carrier_lines.create(price: 75)
+      unlimited_plus.carrier_lines.create(price: 55)
+      unlimited_plus.carrier_lines.create(price: 35)
+      unlimited_plus.carrier_lines.create(price: 35)
+      unlimited_plus.carrier_lines.create(price: 35)
+      unlimited_plus.carrier_lines.create(price: 35)
+      unlimited_plus.carrier_lines.create(price: 35)
+      unlimited_plus.carrier_lines.create(price: 35)
+      unlimited_plus.carrier_lines.create(price: 35)
+      unlimited_plus.carrier_lines.create(price: 35)
 
     puts 'Sprint Plans created!'
 
