@@ -3,7 +3,7 @@
 tmo = Carrier.create(name:'T-Mobile')
 
   tmo_essentials = tmo.carrier_plans.create(
-    name: 'T-Mobile Essentials', 
+    name: 'Essentials', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: false,
@@ -25,7 +25,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_essentials.carrier_lines.create(price: 20)
 
   tmo_essentials_hotpost = tmo.carrier_plans.create(
-    name: 'T-Mobile Essentials Hotspot', 
+    name: 'Essentials Hotspot', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: false,
@@ -69,7 +69,7 @@ tmo = Carrier.create(name:'T-Mobile')
     data_amount: Float::INFINITY,
     data_price: 0,
     hd_video: true,
-    hotspot_lte: 0,
+    hotspot_lte: 20,
     hotspot_3g: Float::INFINITY,
     soft_cap: 50,
     max_lines: 2,
@@ -689,32 +689,37 @@ sprint = Carrier.create(name:'Sprint')
     line_quantity: 5, 
     auto_pay: false, 
     senior_pricing: false, 
-    military_pricing: false
+    military_pricing: true
     )
       plan_one.user_lines.create(
         data_amount: 50, 
-        hotspot: 15, 
-        hd_video: false
+        hotspot: 0, 
+        hd_video: false,
+        soft_cap: 0
         )
       plan_one.user_lines.create(
         data_amount: 5, 
         hotspot: 0, 
-        hd_video: true
+        hd_video: true,
+        soft_cap: 0
         )
       plan_one.user_lines.create(
         data_amount: 25, 
-        hotspot: 15, 
-        hd_video: true
+        hotspot: 0, 
+        hd_video: true,
+        soft_cap: 0
         )
       plan_one.user_lines.create(
         data_amount: 5, 
         hotspot: 0, 
-        hd_video: true
+        hd_video: false,
+        soft_cap: 0
         )
       plan_one.user_lines.create(
         data_amount: 2, 
         hotspot: 0, 
-        hd_video: false
+        hd_video: true,
+        soft_cap: 0
         )
     
   # Quiz 2
@@ -722,18 +727,20 @@ sprint = Carrier.create(name:'Sprint')
     line_quantity: 1, 
     auto_pay: false, 
     senior_pricing: false, 
-    military_pricing: false
+    military_pricing: true
     )
       plan_two.user_lines.create(
-        data_amount: 9, 
-        hotspot: 0, 
-        hd_video: true
+        data_amount: 9,
+        hotspot: 0,
+        hd_video: true,
+        soft_cap: 20
         )
 
       plan_two.user_lines.create(
-        data_amount: 9, 
-        hotspot: 0, 
-        hd_video: true
+        data_amount: 9,
+        hotspot: 5,
+        hd_video: false,
+        soft_cap: 0
         )
 
   puts 'Two Quizzes created'

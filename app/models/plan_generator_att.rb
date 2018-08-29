@@ -60,7 +60,6 @@ class PlanGeneratorAtt
     plans
   end
 
-  #Don't love this solution, but works for now. 
   def hd_video_sort
     plans = []
     hd_video = false

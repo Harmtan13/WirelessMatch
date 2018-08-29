@@ -2,35 +2,11 @@
 
 <h3><%= @tmo.name %></h3>
 
-  <h4>Consumer Mix Plans</h4>
-    <% @tmo_plan.consumer_mix_plans.each do |plan| %>
-      <p>&nbsp&nbsp&nbsp-<%= plan.name %></p>
-    <% end %>
+  <% @tmo_plan.line_pricing.each.with_index(1) do |line, index| %>
+  <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @tmo_plan.line_calculation[index-1].name%></p>
+  <% end %>
 
-  <h4>Consumer Set Plans</h4>
-    <% @tmo_plan.consumer_set_plans.each do |plan| %>
-      <p>&nbsp&nbsp&nbsp-<%= plan.name %></p>
-    <% end %>
-
-  <h4>Senior Mix Plans</h4>
-    <% @tmo_plan.senior_mix_plans.each do |plan| %>
-      <p>&nbsp&nbsp&nbsp-<%= plan.name %></p>
-    <% end %>
-
-  <h4>Senior Set Plans</h4>
-    <% @tmo_plan.senior_set_plans.each do |plan| %>
-      <p>&nbsp&nbsp&nbsp-<%= plan.name %></p>
-    <% end %>
-
-  <h4>Military Mix Plans</h4>
-    <% @tmo_plan.military_mix_plans.each do |plan| %>
-      <p>&nbsp&nbsp&nbsp-<%= plan.name %></p>
-    <% end %>
-
-  <h4>Military Set Plans</h4>
-    <% @tmo_plan.military_set_plans.each do |plan| %>
-      <p>&nbsp&nbsp&nbsp-<%= plan.name %></p>
-    <% end %>
+  <p>Total: <%= number_to_currency(@tmo_plan.final_plan_total, precision: 0) %></p>
 
 <h3><%= @verizon.name %></h3>
 
