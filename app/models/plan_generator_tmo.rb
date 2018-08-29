@@ -11,7 +11,7 @@ class PlanGeneratorTmo
     consumer_plans = @plans.where(
       senior_pricing: false,
       military_pricing: false
-)
+    )
 
     senior_plans = @plans.where(military_pricing: false)
 
