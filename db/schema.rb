@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_16_011300) do
+ActiveRecord::Schema.define(version: 2018_08_30_210007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_08_16_011300) do
     t.boolean "hd_video"
     t.float "hotspot_3g"
     t.float "soft_cap"
-    t.float "max_lines"
+    t.float "min_lines"
     t.decimal "auto_pay"
     t.decimal "max_auto_pay"
     t.boolean "military_pricing"

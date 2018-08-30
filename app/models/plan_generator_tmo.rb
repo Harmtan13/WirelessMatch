@@ -31,7 +31,7 @@ class PlanGeneratorTmo
     plans = []
 
     customer_type.each do |plan|
-      if plan.carrier_lines.count >= lines.count
+      if plan.carrier_lines.count >= lines.count && lines.count >= plan.min_lines
         plans << plan
       end
     end
