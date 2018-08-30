@@ -32,7 +32,7 @@ class PlanGeneratorAtt
   end
 
   def total_data
-    @quiz.user_lines.sum(:data_amount) + @quiz.user_lines.sum(:hotspot)
+    @quiz.user_lines.sum(:data_amount)
   end
 
   def data_sort
@@ -149,7 +149,7 @@ class PlanGeneratorAtt
   # Bucket Plans
   def bucket_hotspot_sort
     plans = []
-    hotspot = @quiz.user_lines.sum(:hotspot) + @quiz.user_lines.sum(:data_amount)
+    hotspot = @quiz.user_lines.sum(:hotspot)
 
     data_sort.each do |plan|
       if hotspot <= plan.hotspot_lte && plan.data_amount < @unlimited_data
