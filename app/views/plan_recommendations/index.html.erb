@@ -36,3 +36,7 @@
   <p>Total: <%= number_to_currency(@att_plan.plan_total(@att_plan.plan_calculations), precision: 0) %></p>
 
 <h3><%= @sprint.name %></h3><p>
+
+  <% @sprint_plan.hotspot_sort.each do |plan| %>
+    <p><%= plan.name %></p>
+  <% end %>
