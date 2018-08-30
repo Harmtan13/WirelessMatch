@@ -5,8 +5,16 @@
 
 <% @plans.each do |plan|%>
   <h2><%=plan.name %></h2>
-  <p>Data Amount: <%= plan.data_gb%></p>
-  <p>Data Price: <%= number_to_currency(plan.data_price)%></p>
+
+  <div><b>Data Price:</b> <%= number_to_currency(plan.data_price)%></div>
+  <div><b>Data Amount:</b> <%= plan.data_gb%></div>
+  <p>
+  
+  <div><b>HD Video:</b> <%= plan.hd_video%></div>
+  <div><b>Hotspot:</b> <%= plan.hotspot_lte%></div>
+  <div><b>Soft Cap:</b> <%= plan.soft_cap%></div>
+  
+  </p>
 
   <% plan.carrier_lines.each.with_index(1) do |line, index| %>
     <div><%= "Line-#{index}:" %> <%= number_to_currency(line.price, precision: 0) %></div>
