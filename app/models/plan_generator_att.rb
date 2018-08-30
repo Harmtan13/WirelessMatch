@@ -78,7 +78,6 @@ class PlanGeneratorAtt
     end
 
     plans.uniq
-    
   end
 
   def line_count_sort
