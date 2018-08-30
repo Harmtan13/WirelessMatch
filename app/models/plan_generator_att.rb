@@ -85,7 +85,7 @@ class PlanGeneratorAtt
     plans = []
  
       hd_video_sort.each do |plan|
-        if @quiz.user_lines.count <= plan.carrier_lines.count
+        if @quiz.user_lines.count <= plan.carrier_lines.count && @quiz.user_lines.count >= plan.min_lines
           plans << plan
         end
       end
