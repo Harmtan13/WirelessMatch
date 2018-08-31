@@ -651,7 +651,7 @@ sprint = Carrier.create(name:'Sprint')
     hotspot_lte: 0,
     hotspot_3g: Float::INFINITY,
     soft_cap: 50,
-    min_lines: 1,
+    min_lines: 4,
     auto_pay: 5,
     max_auto_pay: 50,
     senior_pricing: false,
@@ -761,8 +761,8 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_two.user_lines.create(
-        data_amount: 2,
-        hotspot: 1,
+        data_amount: 3,
+        hotspot: 0,
         hd_video: false,
         soft_cap: 0
         )
