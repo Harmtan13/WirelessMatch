@@ -129,7 +129,7 @@ class PlanGeneratorTmo
 
   def line_calculation
     price = 0
-    final_plan = []
+    final_plan = nil
 
     line_sorter.each do |lines|
       if plan_total(lines) <= price || price == 0
@@ -149,10 +149,10 @@ class PlanGeneratorTmo
     line_prices  
   end
 
-  def plan_total(plans)
+  def plan_total(plan)
     total = 0
-    plans.each.with_index do |plan, index|
-      total += plan.carrier_lines[index].price
+    plan.each.with_index do |line, index|
+      total += line.carrier_lines[index].price
     end
     total
   end
