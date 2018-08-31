@@ -2,41 +2,45 @@
 
 <h3><%= @tmo.name %></h3>
 
-  <% @tmo_plan.line_pricing.each.with_index(1) do |line, index| %>
-  <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @tmo_plan.line_calculation[index-1].name%></p>
+  <% @t.line_pricing.each.with_index(1) do |line, index| %>
+  <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @t.line_calculation[index-1].name%></p>
   <% end %>
 
-  <p>Total: <%= number_to_currency(@tmo_plan.final_plan_total, precision: 0) %></p>
+  <p>Total: <%= number_to_currency(@t.final_plan_total, precision: 0) %></p>
 
 <h3><%= @verizon.name %></h3>
 
-  <p><%= @verizon_plan.plan_name %></p>
+  <p><%= @v.plan_name %></p>
 
-  <p><%= "Data-Price: " if @verizon_plan.data_price%><%= number_to_currency(@verizon_plan.data_price, precision: 0) %></p>
+  <p><%= "Data-Price: " if @v.data_price%><%= number_to_currency(@v.data_price, precision: 0) %></p>
 
-  <% @verizon_plan.line_pricing.each.with_index(1) do |line, index| %>
+  <% @v.line_pricing.each.with_index(1) do |line, index| %>
     <p>
     <%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %>
 
-    <%= "- #{@verizon_plan.unlimited_plan_name[index-1].name}" if @verizon_plan.unlimited_plan_name%>
+    <%= "- #{@v.unlimited_plan_name[index-1].name}" if @v.unlimited_plan_name%>
     </p>
   <% end %>
 
-  <p>Total: <%= number_to_currency(@verizon_plan.plan_total, precision: 0) %></p>
+  <p>Total: <%= number_to_currency(@v.plan_total, precision: 0) %></p>
 
 <h3><%= @att.name %></h3>
 
-  <p><%= @att_plan.plan_calculations.name %></p>
-  <p>Data-Price : <%= number_to_currency(@att_plan.plan_calculations.data_price, precision: 0) %></p>
+  <p><%= @a.plan_calculations.name %></p>
+  <p>Data-Price : <%= number_to_currency(@a.plan_calculations.data_price, precision: 0) %></p>
   
-    <% @att_plan.line_pricing.each.with_index(1) do |line, index| %>
+    <% @a.line_pricing.each.with_index(1) do |line, index| %>
     <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %></p>
     <% end %>
 
-  <p>Total: <%= number_to_currency(@att_plan.plan_total(@att_plan.plan_calculations), precision: 0) %></p>
+  <p>Total: <%= number_to_currency(@a.plan_total(@a.plan_calculations), precision: 0) %></p>
 
 <h3><%= @sprint.name %></h3><p>
 
-  <% @sprint_plan.hotspot_sort.each do |plan| %>
-    <p><%= plan.name %></p>
+  <p><%= @s.plan_calculation.name %></p>
+
+  <% @s.line_pricing.each.with_index(1) do |line, index|%>
+    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> </p>
   <% end %>
+
+  <p>Total: <%= number_to_currency(@s.final_price) %></p>

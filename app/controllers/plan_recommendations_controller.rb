@@ -13,10 +13,10 @@ class PlanRecommendationsController < ApplicationController
     @att_carrier_plans = @att.carrier_plans
     @sprint_carrier_plans = @sprint.carrier_plans
 
-    @tmo_plan = PlanGeneratorTmo.new(@tmo, @tmo_carrier_plans, @quiz)
-    @verizon_plan = PlanGeneratorVerizon.new(@verizon, @verizon_carrier_plans, @quiz)
-    @att_plan = PlanGeneratorAtt.new(@att, @att_carrier_plans, @quiz)
-    @sprint_plan = PlanGeneratorSprint.new(@sprint, @sprint_carrier_plans, @quiz)
+    @t = PlanGeneratorTmo.new(@tmo, @tmo_carrier_plans, @quiz)
+    @v = PlanGeneratorVerizon.new(@verizon, @verizon_carrier_plans, @quiz)
+    @a = PlanGeneratorAtt.new(@att, @att_carrier_plans, @quiz)
+    @s = PlanGeneratorSprint.new(@sprint, @sprint_carrier_plans, @quiz)
   end
 
 end
