@@ -93,7 +93,7 @@ class PlanGeneratorAtt
   end
 
   def plan_calculations
-    final_plan = ''
+    final_plan = nil
     price = 0
 
     line_count_sort.each do |plan|
@@ -112,8 +112,8 @@ class PlanGeneratorAtt
     plan = plan_calculations
     lines = []
 
-    line_count.times do |count|
-      lines << plan.carrier_lines[count]
+    line_count.times do |index|
+      lines << plan.carrier_lines[index]
     end
 
     lines
