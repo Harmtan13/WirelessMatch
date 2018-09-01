@@ -19,3 +19,4 @@
 ### Sprint
 * Implement Taxes & Fees estimate
 * Calculate Auto-pay
+* Add Senior/Military plans
