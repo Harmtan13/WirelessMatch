@@ -2,17 +2,22 @@
 
 ### Verizon 
 * Implement a Soft-Cap sorter function
-* Take into account Taxes not being included
+* Implement Taxes & Fees estimate
 * Calculate Auto-pay
-
-### T-Mobile 
-* Calculate Auto-pay
-* Mention that Taxes are included
+* Add Senior/Military plans
+* Line sorter function that decides lines based on lowest price, not set order for Mix & Match Plans
 
 ### AT&T
 * Implement a Soft-Cap sorter function
+* Implement Taxes & Fees estimate
 * Calculate Auto-pay
+* Add Senior/Military plans
+
+### T-Mobile 
+* Implement Taxes & Fees estimate
+* Calculate Auto-pay
+* Line sorter function that decides lines based on lowest price, not set order for Mix & Match Plans
 
 ### Sprint
-* Upate Plan information
-* Write Calculations
+* Implement Taxes & Fees estimate
+* Calculate Auto-pay
