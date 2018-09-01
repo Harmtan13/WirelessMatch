@@ -80,10 +80,30 @@ class PlanGeneratorAtt
     plans.uniq
   end
 
+  def soft_cap_sort
+    plans = []
+    soft_cap = 0
+
+    @quiz.user_lines.each do |line|
+      if line.soft_cap > soft_cap
+        soft_cap = line.soft_cap
+      end
+    end
+
+    hd_video_sort.each do |plan|
+      if plan.data_amount < @unlimited_data
+        plans << plan
+      elsif plan.soft_cap >= soft_cap
+        plans << plan
+      end
+    end
+    plans
+  end
+
   def line_count_sort
     plans = []
  
-      hd_video_sort.each do |plan|
+      soft_cap_sort.each do |plan|
         if @quiz.user_lines.count <= plan.carrier_lines.count && @quiz.user_lines.count >= plan.min_lines
           plans << plan
         end

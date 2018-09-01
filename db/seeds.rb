@@ -803,10 +803,10 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_two.user_lines.create(
-        data_amount: 3,
+        data_amount: 10,
         hotspot: 0,
         hd_video: false,
-        soft_cap: 0
+        soft_cap: 1
         )
 
   puts 'Two Quizzes created'
