@@ -1,7 +1,7 @@
 class PlanRecommendationsController < ApplicationController
 
   def index
-    @quiz = UserPlan.last
+    @quiz = UserPlan.first
 
     @tmo = Carrier.find_by_name('T-Mobile')
     @verizon = Carrier.find_by_name('Verizon')

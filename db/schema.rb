@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_210007) do
+ActiveRecord::Schema.define(version: 2018_09_01_170312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_210007) do
     t.boolean "senior_pricing"
     t.boolean "mix_and_match"
     t.integer "match_id"
+    t.string "plan_type"
     t.index ["carrier_id"], name: "index_carrier_plans_on_carrier_id"
   end
 

@@ -2,6 +2,8 @@
 
 <h3><%= @tmo.name %></h3>
 
+<h4> <%= @t.line_calculation.first.plan_type %> </h4>
+
   <% @t.line_pricing.each.with_index(1) do |line, index| %>
   <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @t.line_calculation[index-1].name%></p>
   <% end %>

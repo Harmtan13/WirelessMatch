@@ -3,6 +3,7 @@
 tmo = Carrier.create(name:'T-Mobile')
 
   tmo_essentials = tmo.carrier_plans.create(
+    plan_type: 'T-Mobile Essentials',
     name: 'Essentials', 
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -25,6 +26,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_essentials.carrier_lines.create(price: 20)
 
   tmo_essentials_hotpost = tmo.carrier_plans.create(
+    plan_type: 'T-Mobile Essentials',
     name: 'Essentials Hotspot', 
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -47,7 +49,8 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_essentials_hotpost.carrier_lines.create(price: 20+10)
 
   tmo_55 = tmo.carrier_plans.create(
-    name: 'Unlimited 55', 
+    plan_type: 'Unlimited 55',
+    name: 'One', 
     data_amount: Float::INFINITY,
     data_price: 0,
     hd_video: false,
@@ -65,7 +68,8 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_55.carrier_lines.create(price: 25)
 
   tmo_55_one_plus = tmo.carrier_plans.create(
-    name: 'Unlimited 55 - One Plus', 
+    plan_type: 'Unlimited 55',
+    name: 'One Plus',
     data_amount: Float::INFINITY,
     data_price: 0,
     hd_video: true,
@@ -83,7 +87,8 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_55_one_plus.carrier_lines.create(price: 25 + 15)
 
   tmo_55_one_plus_family_pricing = tmo.carrier_plans.create(
-    name: 'Unlimited 55 - One Plus Family', 
+    plan_type: 'Unlimited 55 - One Plus Family',
+    name: 'One Plus', 
     data_amount: Float::INFINITY,
     data_price: 0,
     hd_video: true,
@@ -101,8 +106,9 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_55_one_plus_family_pricing.carrier_lines.create(price: 25 + 10)
 
   military_one = tmo.carrier_plans.create(
-    name: 'Military', 
-    data_amount: Float::INFINITY, 
+    plan_type: 'Military T-Mobile-One',
+    name: 'One',
+    data_amount: Float::INFINITY,
     data_price: 0,
     hd_video: false,
     hotspot_lte: 0,
@@ -129,7 +135,8 @@ tmo = Carrier.create(name:'T-Mobile')
       military_one.carrier_lines.create(price: 30)
 
   military_one_plus = tmo.carrier_plans.create(
-    name: 'Military - One Plus', 
+    plan_type: 'Military - T-Mobile One',
+    name: 'One Plus',
     data_amount: Float::INFINITY,
     data_price: 0,
     hd_video: true,
@@ -157,7 +164,8 @@ tmo = Carrier.create(name:'T-Mobile')
       military_one_plus.carrier_lines.create(price: 30+15)
 
   military_one_plus_family = tmo.carrier_plans.create(
-    name: 'Military - One Plus Family', 
+    plan_type: 'Military - T-Mobile One Plus Family',
+    name: 'One Plus',
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
@@ -185,7 +193,8 @@ tmo = Carrier.create(name:'T-Mobile')
       military_one_plus_family.carrier_lines.create(price: 30+10)
 
   tmo_one = tmo.carrier_plans.create(
-    name: 'One', 
+    plan_type: 'T-Mobile One',
+    name: 'One',
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: false,
@@ -207,13 +216,14 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_one.carrier_lines.create(price: 25)
       tmo_one.carrier_lines.create(price: 25)
       tmo_one.carrier_lines.create(price: 25)
-      tmo_one.carrier_lines.create(price: 25)
-      tmo_one.carrier_lines.create(price: 25)
-      tmo_one.carrier_lines.create(price: 25)
-      tmo_one.carrier_lines.create(price: 25)
+      tmo_one.carrier_lines.create(price: 30)
+      tmo_one.carrier_lines.create(price: 30)
+      tmo_one.carrier_lines.create(price: 30)
+      tmo_one.carrier_lines.create(price: 30)
 
   tmo_one_plus = tmo.carrier_plans.create(
-    name: 'One Plus', 
+    plan_type: 'T-Mobile One',
+    name: 'One Plus',
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
@@ -235,13 +245,14 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_one_plus.carrier_lines.create(price: 25+15)
       tmo_one_plus.carrier_lines.create(price: 25+15)
       tmo_one_plus.carrier_lines.create(price: 25+15)
-      tmo_one_plus.carrier_lines.create(price: 25+15)
-      tmo_one_plus.carrier_lines.create(price: 25+15)
-      tmo_one_plus.carrier_lines.create(price: 25+15)
-      tmo_one_plus.carrier_lines.create(price: 25+15)
+      tmo_one_plus.carrier_lines.create(price: 30+15)
+      tmo_one_plus.carrier_lines.create(price: 30+15)
+      tmo_one_plus.carrier_lines.create(price: 30+15)
+      tmo_one_plus.carrier_lines.create(price: 30+15)
 
   tmo_one_plus_family_pricing = tmo.carrier_plans.create(
-    name: 'One Plus Family', 
+    plan_type: 'T-Mobile One Plus Family',
+    name: 'One Plus',
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
@@ -263,10 +274,10 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_one_plus_family_pricing.carrier_lines.create(price: 25+10)
       tmo_one_plus_family_pricing.carrier_lines.create(price: 25+10)
       tmo_one_plus_family_pricing.carrier_lines.create(price: 25+10)
-      tmo_one_plus_family_pricing.carrier_lines.create(price: 25+10)
-      tmo_one_plus_family_pricing.carrier_lines.create(price: 25+10)
-      tmo_one_plus_family_pricing.carrier_lines.create(price: 25+10)
-      tmo_one_plus_family_pricing.carrier_lines.create(price: 25+10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 30+10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 30+10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 30+10)
+      tmo_one_plus_family_pricing.carrier_lines.create(price: 30+10)
 
 puts 'T-Mobile Plans created!'
 
@@ -361,7 +372,8 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_8gb.carrier_lines.create(price: 20)
 
   go_unlimited = verizon.carrier_plans.create(
-    name: 'Go-Unlimited', 
+    plan_type: 'Mix & Match - Unlimtied',
+    name: 'Go',
     data_amount: Float::INFINITY, 
     data_price: 0,
     hotspot_lte: 0,
@@ -385,7 +397,8 @@ verizon = Carrier.create(name:'Verizon')
       go_unlimited.carrier_lines.create(price: 45)
 
   beyond_unlimited = verizon.carrier_plans.create(
-    name: 'Beyond Unlimited', 
+    plan_type: 'Mix & Match - Unlimtied',
+    name: 'Beyond', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
@@ -409,7 +422,8 @@ verizon = Carrier.create(name:'Verizon')
       beyond_unlimited.carrier_lines.create(price: 55)
 
   above_unlimited = verizon.carrier_plans.create(
-    name: 'Above Unlimited', 
+    plan_type: 'Mix & Match - Unlimtied',
+    name: 'Above', 
     data_amount: Float::INFINITY, 
     data_price: 0,
     hd_video: true,
@@ -724,25 +738,19 @@ sprint = Carrier.create(name:'Sprint')
     military_pricing: false
     )
       plan_one.user_lines.create(
-        data_amount: 2, 
+        data_amount: 4, 
+        hotspot: 2, 
+        hd_video: true,
+        soft_cap: 1
+        )
+      plan_one.user_lines.create(
+        data_amount: 14, 
         hotspot: 0, 
-        hd_video: false,
-        soft_cap: 0
+        hd_video: true,
+        soft_cap: 1
         )
       plan_one.user_lines.create(
         data_amount: 1, 
-        hotspot: 0, 
-        hd_video: true,
-        soft_cap: 0
-        )
-      plan_one.user_lines.create(
-        data_amount: 1, 
-        hotspot: 0, 
-        hd_video: true,
-        soft_cap: 0
-        )
-      plan_one.user_lines.create(
-        data_amount: 2, 
         hotspot: 0, 
         hd_video: false,
         soft_cap: 0
@@ -750,7 +758,41 @@ sprint = Carrier.create(name:'Sprint')
       plan_one.user_lines.create(
         data_amount: 2, 
         hotspot: 0, 
+        hd_video: false,
+        soft_cap: 0
+        )
+      plan_one.user_lines.create(
+        data_amount: 10, 
+        hotspot: 5, 
+        hd_video: false,
+        soft_cap: 1
+        )
+
+      plan_one.user_lines.create(
+        data_amount: 26, 
+        hotspot: 5, 
         hd_video: true,
+        soft_cap: 1
+        )
+
+      plan_one.user_lines.create(
+        data_amount: 3, 
+        hotspot: 0, 
+        hd_video: false,
+        soft_cap: 0
+        )
+
+      plan_one.user_lines.create(
+        data_amount: 1, 
+        hotspot: 0, 
+        hd_video: false,
+        soft_cap: 0
+        )
+
+      plan_one.user_lines.create(
+        data_amount: 0, 
+        hotspot: 0, 
+        hd_video: false,
         soft_cap: 0
         )
     

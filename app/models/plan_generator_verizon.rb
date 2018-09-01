@@ -69,7 +69,7 @@ class PlanGeneratorVerizon
 
   def plan_name
     if plan_calculation == unlimited_hd_video
-      "Unlimited - Mix & Match"
+      unlimited_hd_video.first.plan_type
     elsif plan_calculation == bucket_plan_calculation
       plan_calculation.name
     end
