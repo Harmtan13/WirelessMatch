@@ -67,6 +67,10 @@ class PlanGeneratorVerizon
     end
   end
 
+  def taxes_total
+    plan_total + taxes
+  end
+
   def plan_name
     if plan_calculation == unlimited_hd_video
       unlimited_hd_video.first.plan_type
@@ -79,6 +83,10 @@ class PlanGeneratorVerizon
     if plan_calculation == bucket_plan_calculation
       bucket_plan_calculation.data_price
     end
+  end
+
+  def taxes
+    taxes = @quiz.user_lines.count * 5
   end
 
 # Bucket Plans

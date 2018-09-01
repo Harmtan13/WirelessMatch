@@ -158,7 +158,23 @@ class PlanGeneratorTmo
   end
 
   def final_plan_total
-    plan_total(line_calculation)
+    plan_total(line_calculation) + taxes
+  end
+
+  def taxes
+    if line_calculation.first.plan_type == 'T-Mobile Essentials'
+      @quiz.user_lines.count * 5
+    else
+      0
+    end
+  end
+
+  def tax_value
+    if taxes == 0
+      'Taxes Included with plan'
+    else
+      "$#{taxes}"
+    end
   end
 
   def line_hd_video(plans)

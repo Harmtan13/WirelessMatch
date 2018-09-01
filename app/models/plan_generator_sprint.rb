@@ -130,6 +130,10 @@ class PlanGeneratorSprint
   end
 
   def final_price
-    plan_total(plan_calculation)
+    plan_total(plan_calculation) + taxes
+  end
+
+  def taxes
+    taxes = @quiz.user_lines.count * 5
   end
 end

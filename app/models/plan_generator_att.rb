@@ -139,9 +139,13 @@ class PlanGeneratorAtt
     lines
   end
 
+  def taxes
+    taxes = @quiz.user_lines.count * 5
+  end
+
   def plan_total(plan)
     line_count = @quiz.user_lines.count
-    price = plan.data_price
+    price = plan.data_price + taxes
 
     line_count.times do |line|
       price += plan.carrier_lines[line].price
