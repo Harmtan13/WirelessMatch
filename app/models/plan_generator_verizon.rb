@@ -196,10 +196,10 @@ class PlanGeneratorVerizon
     lines = @quiz.user_lines
     plans = []
 
-    lines.each.with_index do |line, index|
+    lines.each do |line|
       temp_plans = []
 
-      soft_cap_sort[index].each do |plan|
+      unlimited_plans.each do |plan|
         if line.hotspot <= plan.hotspot_lte
           temp_plans << plan
         end
