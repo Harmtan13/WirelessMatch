@@ -171,7 +171,7 @@ class PlanGeneratorTmo
 
   def tax_value
     if taxes == 0
-      'Taxes Included with plan'
+      'Included in plan'
     else
       "$#{taxes}"
     end
