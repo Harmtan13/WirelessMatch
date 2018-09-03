@@ -192,23 +192,6 @@ class PlanGeneratorVerizon
     customer_type.where(data_amount: @unlimited_data)
   end
 
-  def soft_cap_sort
-    lines = @quiz.user_lines
-    plans = []
-
-    lines.each do |line|
-      temp_plans = []
-
-      unlimited_plans.each do |plan|
-        if plan.soft_cap >= line.soft_cap
-          temp_plans << plan
-        end
-      end
-      plans << temp_plans
-    end
-    plans
-  end
-
   def unlimited_hotspot
     lines = @quiz.user_lines
     plans = []
