@@ -130,10 +130,22 @@ class PlanGeneratorSprint
   end
 
   def final_price
-    plan_total(plan_calculation) + taxes
+    plan_total(plan_calculation) + taxes + auto_pay
   end
 
   def taxes
     taxes = @quiz.user_lines.count * 5
+  end
+
+  def auto_pay
+    auto_pay = []
+
+    if @quiz.auto_pay == true
+      auto_pay << plan_calculation.auto_pay * @quiz.user_lines.count
+      auto_pay << plan_calculation.max_auto_pay
+      -auto_pay.min
+    else
+      0
+    end
   end
 end

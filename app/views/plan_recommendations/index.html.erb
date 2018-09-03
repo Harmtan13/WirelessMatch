@@ -2,13 +2,14 @@
 
 <h3><%= @tmo.name %></h3>
 
-<h4> <%= @t.line_calculation.first.plan_type %> </h4>
+<p> <%= @t.line_calculation.first.plan_type %> </p>
 
   <% @t.line_pricing.each.with_index(1) do |line, index| %>
   <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @t.line_calculation[index-1].name%></p>
   <% end %>
 
   <p>Estimated Taxes & Fees: <%= @t.tax_value %></p>
+  <p>Auto-Pay Discount: <%= number_to_currency(@t.auto_pay, precision: 0) %></p>
   <p>Total: <%= number_to_currency(@t.final_plan_total, precision: 0) %></p>
 
 <h3><%= @verizon.name %></h3>
@@ -26,6 +27,7 @@
   <% end %>
 
   <p>Estimated Taxes & Fees: <%= number_to_currency(@v.taxes, precision: 0) %></p>
+  <p>Auto-Pay Discount: <%= number_to_currency(@v.auto_pay, precision: 0) %></p>
   <p>Total: <%= number_to_currency(@v.taxes_total, precision: 0) %></p>
 
 <h3><%= @att.name %></h3>
@@ -38,7 +40,8 @@
     <% end %>
 
   <p>Estimated Taxes & Fees: <%= number_to_currency(@a.taxes, precision: 0) %></p>
-  <p>Total: <%= number_to_currency(@a.plan_total(@a.plan_calculations), precision: 0) %></p>
+  <p>Auto-Pay Discount: <%= number_to_currency(@a.auto_pay, precision: 0) %></p>
+  <p>Total: <%= number_to_currency(@a.final_plan_total, precision: 0) %></p>
 
 <h3><%= @sprint.name %></h3><p>
 
@@ -48,5 +51,6 @@
     <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> </p>
   <% end %>
 
-  <p>Estimated Taxes & Fees: <%= number_to_currency(@s.taxes, precision: 0) %></p>  
+  <p>Estimated Taxes & Fees: <%= number_to_currency(@s.taxes, precision: 0) %></p>
+  <p>Auto-Pay Discount: <%= number_to_currency(@s.auto_pay, precision: 0) %></p>
   <p>Total: <%= number_to_currency(@s.final_price) %></p>

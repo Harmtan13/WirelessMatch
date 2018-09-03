@@ -7,7 +7,6 @@
 * Find new Soft-Cap sort Function that doesn't slow down the system.
 
 ### AT&T
-* Calculate Auto-pay
 * Add Senior/Military plans
 
 ### T-Mobile 

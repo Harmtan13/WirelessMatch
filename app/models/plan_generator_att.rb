@@ -143,14 +143,30 @@ class PlanGeneratorAtt
     taxes = @quiz.user_lines.count * 5
   end
 
+  def auto_pay
+    auto_pay = []
+
+    if @quiz.auto_pay == true
+      auto_pay << plan_calculations.auto_pay * @quiz.user_lines.count
+      auto_pay << plan_calculations.max_auto_pay
+      -auto_pay.min
+    else
+      0
+    end
+  end
+
   def plan_total(plan)
     line_count = @quiz.user_lines.count
-    price = plan.data_price + taxes
+    price = plan.data_price
 
     line_count.times do |line|
       price += plan.carrier_lines[line].price
     end
     price
+  end
+
+  def final_plan_total
+    plan_total(plan_calculations) + taxes + auto_pay
   end
 
 

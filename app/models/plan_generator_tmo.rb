@@ -158,7 +158,7 @@ class PlanGeneratorTmo
   end
 
   def final_plan_total
-    plan_total(line_calculation) + taxes
+    plan_total(line_calculation) + taxes + auto_pay
   end
 
   def taxes
@@ -174,6 +174,18 @@ class PlanGeneratorTmo
       'Included in plan'
     else
       "$#{taxes}"
+    end
+  end
+
+  def auto_pay
+    auto_pay = []
+
+    if @quiz.auto_pay == true
+      auto_pay << line_calculation.first.auto_pay * @quiz.user_lines.count
+      auto_pay << line_calculation.first.max_auto_pay
+      -auto_pay.min
+    else
+      0
     end
   end
 

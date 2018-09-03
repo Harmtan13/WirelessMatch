@@ -68,7 +68,7 @@ class PlanGeneratorVerizon
   end
 
   def taxes_total
-    plan_total + taxes
+    plan_total + taxes + auto_pay
   end
 
   def plan_name
@@ -87,6 +87,18 @@ class PlanGeneratorVerizon
 
   def taxes
     taxes = @quiz.user_lines.count * 5
+  end
+
+  def auto_pay
+    auto_pay = []
+
+    if @quiz.auto_pay == true && plan_calculation == unlimited_hd_video
+      auto_pay << plan_calculation.first.auto_pay * @quiz.user_lines.count
+      auto_pay << plan_calculation.first.max_auto_pay
+      -auto_pay.min
+    else
+      0
+    end
   end
 
 # Bucket Plans
@@ -253,10 +265,3 @@ class PlanGeneratorVerizon
     end
   end
 end
-
-=begin
-  
-
-
-  
-=end

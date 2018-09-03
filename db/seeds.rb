@@ -806,7 +806,7 @@ sprint = Carrier.create(name:'Sprint')
         data_amount: 10,
         hotspot: 0,
         hd_video: false,
-        soft_cap: 1
+        soft_cap: 0
         )
 
   puts 'Two Quizzes created'
