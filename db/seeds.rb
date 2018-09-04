@@ -733,7 +733,7 @@ sprint = Carrier.create(name:'Sprint')
 
   #Quiz 1
   plan_one = UserPlan.create(
-    auto_pay: false, 
+    auto_pay: true, 
     senior_pricing: false, 
     military_pricing: false
     )
@@ -795,17 +795,52 @@ sprint = Carrier.create(name:'Sprint')
         hd_video: false,
         soft_cap: 0
         )
+
+      plan_one.user_lines.create(
+        data_amount: 0, 
+        hotspot: 0, 
+        hd_video: false,
+        soft_cap: 1
+        )
     
   # Quiz 2
   plan_two = UserPlan.create(
-    auto_pay: false, 
+    auto_pay: true, 
     senior_pricing: false, 
     military_pricing: false
     )
       plan_two.user_lines.create(
-        data_amount: 10,
+        data_amount: 2,
         hotspot: 0,
         hd_video: false,
+        soft_cap: 0
+        )
+
+      plan_two.user_lines.create(
+        data_amount: 2,
+        hotspot: 0,
+        hd_video: false,
+        soft_cap: 0
+        )
+
+      plan_two.user_lines.create(
+        data_amount:  2,
+        hotspot: 0,
+        hd_video: true,
+        soft_cap: 0
+        )
+
+      plan_two.user_lines.create(
+        data_amount: 2,
+        hotspot: 0,
+        hd_video: true,
+        soft_cap: 0
+        )
+
+      plan_two.user_lines.create(
+        data_amount: 2,
+        hotspot: 0,
+        hd_video: true,
         soft_cap: 0
         )
 
