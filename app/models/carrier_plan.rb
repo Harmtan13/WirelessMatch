@@ -10,5 +10,5 @@ class CarrierPlan < ApplicationRecord
     else
       "#{data_amount.to_i}GB"
     end
-  end                                
+  end
 end

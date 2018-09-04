@@ -20,6 +20,6 @@
     <div><%= "Line-#{index}:" %> <%= number_to_currency(line.price, precision: 0) %></div>
   <%end%>
   <br>
-  <b>Plan-Total: <%= number_to_currency(plan.carrier_lines.sum(:price), precision: 0)%></b>
+  <b>Plan-Total: <%= number_to_currency(plan.carrier_lines.sum(:price) + plan.data_price, precision: 0)%></b>
   <hr>
 <% end %>
