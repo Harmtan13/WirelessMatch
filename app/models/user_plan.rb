@@ -6,4 +6,8 @@ class UserPlan < ApplicationRecord
               attrs['hotspot'].blank? ||
               attrs['hd_video'].blank?)
             }
+
+  def set_guest_id
+    self.guest_id ||= session[:session_id]
+  end
 end

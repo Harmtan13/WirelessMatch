@@ -733,6 +733,7 @@ sprint = Carrier.create(name:'Sprint')
 
   #Quiz 1
   plan_one = UserPlan.create(
+    guest_id: '60eafe26345da51e8df04c90a49331c2',
     auto_pay: true, 
     senior_pricing: false, 
     military_pricing: false
@@ -805,8 +806,9 @@ sprint = Carrier.create(name:'Sprint')
     
   # Quiz 2
   plan_two = UserPlan.create(
-    auto_pay: true, 
-    senior_pricing: false, 
+    guest_id: '53793e8c18925c6ffda743807d17dd32', 
+    auto_pay: true,
+    senior_pricing: false,
     military_pricing: false
     )
       plan_two.user_lines.create(
@@ -843,5 +845,19 @@ sprint = Carrier.create(name:'Sprint')
         hd_video: true,
         soft_cap: 0
         )
+
+    plan_three = UserPlan.create(
+      guest_id: 'bd13b1533f2a422f53b7f052366dba64',
+      auto_pay: true,
+      senior_pricing: false,
+      military_pricing: false
+      )
+
+        plan_three.user_lines.create(
+          data_amount: 10,
+          hotspot: 15,
+          hd_video: true,
+          soft_cap: 0
+          )
 
   puts 'Two Quizzes created'
