@@ -12,7 +12,7 @@ class UserPlansController < ApplicationController
 
     respond_to do |format|
       if @plan.save
-        format.html { redirect_to carriers_path, notice: 'New Carrier has been created!'}
+        format.html { redirect_to plan_recommendations_path, notice: 'New Carrier has been created!'}
       else
         format.html { render :new }
       end

@@ -806,7 +806,7 @@ sprint = Carrier.create(name:'Sprint')
     
   # Quiz 2
   plan_two = UserPlan.create(
-    guest_id: '53793e8c18925c6ffda743807d17dd32', 
+    guest_id: '40f396cf35446dbe394528ca491edbbb', 
     auto_pay: true,
     senior_pricing: false,
     military_pricing: false
