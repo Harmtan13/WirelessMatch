@@ -846,18 +846,4 @@ sprint = Carrier.create(name:'Sprint')
         soft_cap: 0
         )
 
-    plan_three = UserPlan.create(
-      guest_id: 'bd13b1533f2a422f53b7f052366dba64',
-      auto_pay: true,
-      senior_pricing: false,
-      military_pricing: false
-      )
-
-        plan_three.user_lines.create(
-          data_amount: 10,
-          hotspot: 15,
-          hd_video: true,
-          soft_cap: 0
-          )
-
   puts 'Two Quizzes created'

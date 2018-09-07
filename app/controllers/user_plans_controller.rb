@@ -8,6 +8,7 @@ class UserPlansController < ApplicationController
 
   def create
     @plan = UserPlan.new(user_params)
+    @plan.guest_id = session[:session_id]
 
     respond_to do |format|
       if @plan.save
