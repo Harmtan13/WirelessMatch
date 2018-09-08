@@ -4,69 +4,47 @@
       <%= alert_generator(error) %>
     <% end %>
   <% end %>
-  <div>
-    <%= f.label :line_quantity %>
-    <%= f.number_field :line_quantity %>
-  </div>
       
   <div class="form-group">
-    <%= f.label :auto_pay %>
-    <%= f.radio_button(
-            :auto_pay, 
-              options_for_select([
-                ['Yes', true],
-                ['No', false],
-              ])
-        ) %>
+    <div><%= f.label :auto_pay, "Carriers give discounts for enrolling in Auto-Pay, Do you want to enroll?"%></div>
+    <span>Yes<%= f.radio_button :auto_pay, true, checked: true %></span>
+    <span>No<%= f.radio_button :auto_pay, false %></span>
   </div>
-
-  <div class="form-group">
-    <%= f.label :senior_pricing %>
-        <%= f.select(
-            :senior_pricing, 
-              options_for_select([
-                ['Yes', true],
-                ['No', false],
-              ])
-        ) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :military_pricing %>
-        <%= f.select(
-            :military_pricing, 
-              options_for_select([
-                ['Yes', true],
-                ['No', false],
-              ])
-        ) %>
-  </div>
-
-
+  <br>
   <ul>
     <%= f.fields_for :user_lines do |line_form| %>
     <li>
-      <%= line_form.label :data_amount %>
-      <%= line_form.text_field :data_amount %>
+      <div><%= line_form.label :data_amount, "How much data do you need?" %></div>
+        <span>1GB <%= line_form.radio_button :data_amount, 1 %></span> |
+        <span>2GB <%= line_form.radio_button :data_amount, 2 %></span> |
+        <span>4GB <%= line_form.radio_button :data_amount, 4 %></span> |
+        <span>5GB <%= line_form.radio_button :data_amount, 5 %></span> |
+        <span>8GB <%= line_form.radio_button :data_amount, 8 %></span> |
+        <span>10GB <%= line_form.radio_button :data_amount, 10 %></span> |
+        <span>20GB <%= line_form.radio_button :data_amount, 20 %></span> |
+        <span>Unlimited <%= line_form.radio_button :data_amount, Float::INFINITY %></span>
     </li>
-
+      <br>
     <li>
-      <%= line_form.label :hotspot %>
-      <%= line_form.number_field :hotspot %>
+      <div><%= line_form.label :hotspot, "Of your total data, how much is hotspot use?" %></div>
+        <span>What's Hotspot? <%= line_form.radio_button :hotspot, 0 %></span> |
+        <span>1GB <%= line_form.radio_button :hotspot, 1 %></span> |
+        <span>2GB <%= line_form.radio_button :hotspot, 2 %></span> |
+        <span>3GB <%= line_form.radio_button :hotspot, 3 %></span> |
+        <span>4GB <%= line_form.radio_button :hotspot, 4 %></span> |
+        <span>5GB <%= line_form.radio_button :hotspot, 5 %></span> |
+        <span>10GB <%= line_form.radio_button :hotspot, 10 %></span> |
+        <span>15GB <%= line_form.radio_button :hotspot, 15 %></span>
     </li>
-
+      <br>
     <li>
-      <%= line_form.label :hd_video %>
-      <%= line_form.select(
-            :hd_video, 
-              options_for_select([
-                ['Yes', true],
-                ['No', false],
-              ])
-        ) %>
-    </li>
+      <div><%= line_form.label :hd_video, "Does this line need HD-Video?" %></div>
+        <span>Yes <%= line_form.radio_button :hd_video, true, checked: true %></span> |
+        <span>No <%= line_form.radio_button :hd_video, false %></span>
+        <hr>
     <% end %>
   </ul>
+  
 
   <div class="actions">
     <%= f.submit 'Save', class: 'btn btn-primary' %>

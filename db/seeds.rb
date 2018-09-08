@@ -731,119 +731,119 @@ sprint = Carrier.create(name:'Sprint')
 
     puts 'Sprint Plans created!'
 
-  #Quiz 1
-  plan_one = UserPlan.create(
-    guest_id: '60eafe26345da51e8df04c90a49331c2',
-    auto_pay: true, 
-    senior_pricing: false, 
-    military_pricing: false
-    )
-      plan_one.user_lines.create(
-        data_amount: 4, 
-        hotspot: 2, 
-        hd_video: true,
-        soft_cap: 1
-        )
-      plan_one.user_lines.create(
-        data_amount: 14, 
-        hotspot: 0, 
-        hd_video: true,
-        soft_cap: 1
-        )
-      plan_one.user_lines.create(
-        data_amount: 1, 
-        hotspot: 0, 
-        hd_video: false,
-        soft_cap: 0
-        )
-      plan_one.user_lines.create(
-        data_amount: 2, 
-        hotspot: 0, 
-        hd_video: false,
-        soft_cap: 0
-        )
-      plan_one.user_lines.create(
-        data_amount: 10, 
-        hotspot: 5, 
-        hd_video: false,
-        soft_cap: 1
-        )
+  # #Quiz 1
+  # plan_one = UserPlan.create(
+  #   guest_id: '60eafe26345da51e8df04c90a49331c2',
+  #   auto_pay: true, 
+  #   senior_pricing: false, 
+  #   military_pricing: false
+  #   )
+  #     plan_one.user_lines.create(
+  #       data_amount: 4, 
+  #       hotspot: 2, 
+  #       hd_video: true,
+  #       soft_cap: 1
+  #       )
+  #     plan_one.user_lines.create(
+  #       data_amount: 14, 
+  #       hotspot: 0, 
+  #       hd_video: true,
+  #       soft_cap: 1
+  #       )
+  #     plan_one.user_lines.create(
+  #       data_amount: 1, 
+  #       hotspot: 0, 
+  #       hd_video: false,
+  #       soft_cap: 0
+  #       )
+  #     plan_one.user_lines.create(
+  #       data_amount: 2, 
+  #       hotspot: 0, 
+  #       hd_video: false,
+  #       soft_cap: 0
+  #       )
+  #     plan_one.user_lines.create(
+  #       data_amount: 10, 
+  #       hotspot: 5, 
+  #       hd_video: false,
+  #       soft_cap: 1
+  #       )
 
-      plan_one.user_lines.create(
-        data_amount: 26, 
-        hotspot: 5, 
-        hd_video: true,
-        soft_cap: 1
-        )
+  #     plan_one.user_lines.create(
+  #       data_amount: 26, 
+  #       hotspot: 5, 
+  #       hd_video: true,
+  #       soft_cap: 1
+  #       )
 
-      plan_one.user_lines.create(
-        data_amount: 3, 
-        hotspot: 0, 
-        hd_video: false,
-        soft_cap: 0
-        )
+  #     plan_one.user_lines.create(
+  #       data_amount: 3, 
+  #       hotspot: 0, 
+  #       hd_video: false,
+  #       soft_cap: 0
+  #       )
 
-      plan_one.user_lines.create(
-        data_amount: 1, 
-        hotspot: 0, 
-        hd_video: false,
-        soft_cap: 0
-        )
+  #     plan_one.user_lines.create(
+  #       data_amount: 1, 
+  #       hotspot: 0, 
+  #       hd_video: false,
+  #       soft_cap: 0
+  #       )
 
-      plan_one.user_lines.create(
-        data_amount: 0, 
-        hotspot: 0, 
-        hd_video: false,
-        soft_cap: 0
-        )
+  #     plan_one.user_lines.create(
+  #       data_amount: 0, 
+  #       hotspot: 0, 
+  #       hd_video: false,
+  #       soft_cap: 0
+  #       )
 
-      plan_one.user_lines.create(
-        data_amount: 0, 
-        hotspot: 0, 
-        hd_video: false,
-        soft_cap: 1
-        )
+  #     plan_one.user_lines.create(
+  #       data_amount: 0, 
+  #       hotspot: 0, 
+  #       hd_video: false,
+  #       soft_cap: 1
+  #       )
     
-  # Quiz 2
-  plan_two = UserPlan.create(
-    guest_id: '40f396cf35446dbe394528ca491edbbb', 
-    auto_pay: true,
-    senior_pricing: false,
-    military_pricing: false
-    )
-      plan_two.user_lines.create(
-        data_amount: 2,
-        hotspot: 0,
-        hd_video: false,
-        soft_cap: 0
-        )
+  # # Quiz 2
+  # plan_two = UserPlan.create(
+  #   guest_id: '40f396cf35446dbe394528ca491edbbb', 
+  #   auto_pay: true,
+  #   senior_pricing: false,
+  #   military_pricing: false
+  #   )
+  #     plan_two.user_lines.create(
+  #       data_amount: 2,
+  #       hotspot: 0,
+  #       hd_video: false,
+  #       soft_cap: 0
+  #       )
 
-      plan_two.user_lines.create(
-        data_amount: 2,
-        hotspot: 0,
-        hd_video: false,
-        soft_cap: 0
-        )
+  #     plan_two.user_lines.create(
+  #       data_amount: 2,
+  #       hotspot: 0,
+  #       hd_video: false,
+  #       soft_cap: 0
+  #       )
 
-      plan_two.user_lines.create(
-        data_amount:  2,
-        hotspot: 0,
-        hd_video: true,
-        soft_cap: 0
-        )
+  #     plan_two.user_lines.create(
+  #       data_amount:  2,
+  #       hotspot: 0,
+  #       hd_video: true,
+  #       soft_cap: 0
+  #       )
 
-      plan_two.user_lines.create(
-        data_amount: 2,
-        hotspot: 0,
-        hd_video: true,
-        soft_cap: 0
-        )
+  #     plan_two.user_lines.create(
+  #       data_amount: 2,
+  #       hotspot: 0,
+  #       hd_video: true,
+  #       soft_cap: 0
+  #       )
 
-      plan_two.user_lines.create(
-        data_amount: 2,
-        hotspot: 0,
-        hd_video: true,
-        soft_cap: 0
-        )
+  #     plan_two.user_lines.create(
+  #       data_amount: 2,
+  #       hotspot: 0,
+  #       hd_video: true,
+  #       soft_cap: 0
+  #       )
 
-  puts 'Two Quizzes created'
+  # puts 'Two Quizzes created'
