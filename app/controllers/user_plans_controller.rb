@@ -8,7 +8,8 @@ class UserPlansController < ApplicationController
 
   def create
     @plan = UserPlan.new(user_params)
-    @plan.guest_id = session[:session_id]
+    session[:guest_user_id] = "guest-#{SecureRandom.hex(6)}"
+    @plan.guest_id = session[:guest_user_id]
 
     respond_to do |format|
       if @plan.save
@@ -25,7 +26,7 @@ class UserPlansController < ApplicationController
   def update
     respond_to do |format|
       if @plan.update(user_params)
-        format.html {redirect_to carriers_path, notice: 'Carrier has been updated!'}
+        format.html {redirect_to plan_recommendations_path, notice: 'Carrier has been updated!'}
       else
         format.html {render :edit}
       end
