@@ -1,5 +1,7 @@
 <div>
-  <%= link_to('Home', root_path) %>
-  <%= link_to('Match-Quiz', new_user_plan_path)%>
+  <%= link_to('Home', root_path) %> |
+  <%= link_to('Match-Quiz', new_user_plan_path) unless session[:guest_user_id] %> |
+  <%= link_to('Edit-Match-Quiz', edit_user_plan_path(session[:form_id])) if session[:guest_user_id]%> |
   <%= link_to('Plan-Recommendations', plan_recommendations_path)%>
 </div>
+
