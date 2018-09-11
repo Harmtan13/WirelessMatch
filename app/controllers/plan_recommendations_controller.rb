@@ -1,7 +1,8 @@
 class PlanRecommendationsController < ApplicationController
 
   def index
-    @quiz = UserPlan.where(guest_id: session[:session_id]).last
+    @quiz = UserPlan.where(guest_id: session[:guest_user_id]).last
+    session[:form_id] = @quiz.id
 
     @tmo = Carrier.find_by_name('T-Mobile')
     @verizon = Carrier.find_by_name('Verizon')
