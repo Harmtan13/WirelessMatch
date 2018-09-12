@@ -1,9 +1,8 @@
 # To-Do List
 
 ### Site-Wide Tasks
-* Create Sessions for Specific User form data for results Calculations-
 * Styling the website
-* Create Admin Users with Devise
+* Create edit form that remembers it's state
 
 ### Verizon 
 * Add Senior/Military plans
