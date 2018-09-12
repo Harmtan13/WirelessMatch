@@ -7,37 +7,37 @@
       
   <div class="form-group">
     <div><%= f.label :auto_pay, "Carriers give discounts for enrolling in Auto-Pay, Do you want to enroll?"%></div>
-    <span>Yes<%= f.radio_button :auto_pay, true, checked: true %></span>
-    <span>No<%= f.radio_button :auto_pay, false %></span>
+    <span><%= f.radio_button :auto_pay, true, checked: true %> Yes</span>
+    <span><%= f.radio_button :auto_pay, false %> No</span>
   </div>
   <br>
   <ul>
     <%= f.fields_for :user_lines do |line_form| %>
     <li>
       <div><%= line_form.label :data_amount, "How much data do you need?" %></div>
-        <span>1GB <%= line_form.radio_button :data_amount, 1 %></span> |
-        <span>2GB <%= line_form.radio_button :data_amount, 2 %></span> |
-        <span>4GB <%= line_form.radio_button :data_amount, 4 %></span> |
-        <span>5GB <%= line_form.radio_button :data_amount, 5 %></span> |
-        <span>8GB <%= line_form.radio_button :data_amount, 8 %></span> |
-        <span>10GB <%= line_form.radio_button :data_amount, 10 %></span> |
-        <span>20GB <%= line_form.radio_button :data_amount, 20 %></span> |
-        <span>Unlimited <%= line_form.radio_button :data_amount, Float::INFINITY %></span>
+        <span><%= line_form.radio_button :data_amount, 1 %> 1GB</span> |
+        <span><%= line_form.radio_button :data_amount, 2 %> 2GB</span> |
+        <span><%= line_form.radio_button :data_amount, 4 %> 4GB</span> |
+        <span><%= line_form.radio_button :data_amount, 5 %> 5GB</span> |
+        <span><%= line_form.radio_button :data_amount, 8 %> 8GB</span> |
+        <span><%= line_form.radio_button :data_amount, 10 %> 10GB</span> |
+        <span><%= line_form.radio_button :data_amount, 20 %> 20GB</span> |
+        <span><%= line_form.radio_button :data_amount, Float::INFINITY %> Unlimited</span>
     </li>
       <br>
     <li>
       <div><%= line_form.label :hotspot, "Of your total data, about how much is hotspot use?" %></div>
-        <span>What's Hotspot? <%= line_form.radio_button :hotspot, 0 %></span> |
-        <span>1GB <%= line_form.radio_button :hotspot, 1 %></span> |
-        <span>5GB <%= line_form.radio_button :hotspot, 5 %></span> |
-        <span>10GB <%= line_form.radio_button :hotspot, 10 %></span> |
-        <span>15GB <%= line_form.radio_button :hotspot, 15 %></span>
+        <span><%= line_form.radio_button :hotspot, 0 %> What's Hotspot?</span> |
+        <span><%= line_form.radio_button :hotspot, 1 %> 1GB</span> |
+        <span><%= line_form.radio_button :hotspot, 5 %> 5GB</span> |
+        <span><%= line_form.radio_button :hotspot, 10 %> 10GB</span> |
+        <span><%= line_form.radio_button :hotspot, 15 %> 15GB</span>
     </li>
       <br>
     <li>
       <div><%= line_form.label :hd_video, "Does this line need HD-Video?" %></div>
-        <span>Yes <%= line_form.radio_button :hd_video, true, checked: true %></span> |
-        <span>No <%= line_form.radio_button :hd_video, false %></span>
+        <span><%= line_form.radio_button :hd_video, true, checked: true %> Yes</span> |
+        <span><%= line_form.radio_button :hd_video, false %> No</span>
         <hr>
     <% end %>
   </ul>
