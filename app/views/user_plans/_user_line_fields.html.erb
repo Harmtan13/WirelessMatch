@@ -13,7 +13,7 @@
   <br>
 <li>
   <div><%= f.label :hotspot, "Of your total data, about how much is hotspot use?" %></div>
-    <span><%= f.radio_button :hotspot, 0.0 %> What's Hotspot?</span> |
+    <span><%= f.radio_button :hotspot, 0.0 %> None</span> |
     <span><%= f.radio_button :hotspot, 1.0 %> 1GB</span> |
     <span><%= f.radio_button :hotspot, 5.0 %> 5GB</span> |
     <span><%= f.radio_button :hotspot, 10.0 %> 10GB</span> |
@@ -21,7 +21,7 @@
 </li>
   <br>
 <li>
-  <div><%= f.label :hd_video, "Does this f need HD-Video?" %></div>
+  <div><%= f.label :hd_video, "Does this line need HD-Video?" %></div>
     <span><%= f.radio_button :hd_video, true, checked: true %> Yes</span> |
     <span><%= f.radio_button :hd_video, false %> No</span>
     <hr>
