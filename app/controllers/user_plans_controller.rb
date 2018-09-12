@@ -48,7 +48,8 @@ class UserPlansController < ApplicationController
         :id,
         :data_amount,
         :hotspot,
-        :hd_video
+        :hd_video,
+        :_destroy
         ]
       )
   end

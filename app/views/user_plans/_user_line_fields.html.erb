@@ -1,3 +1,4 @@
+<div class="nested-fields">
 <li>
 <p><%= "Line: #{f.index.to_i + 1}" %></p>
   <div><%= f.label :data_amount, "How much data do you need?" %></div>
@@ -24,5 +25,8 @@
   <div><%= f.label :hd_video, "Does this line need HD-Video?" %></div>
     <span><%= f.radio_button :hd_video, true, checked: true %> Yes</span> |
     <span><%= f.radio_button :hd_video, false %> No</span>
-    <hr>
 </li>
+    <br>
+    <p><%= link_to_remove_association 'Remove Line', f %></p>
+    <hr>
+</div>
