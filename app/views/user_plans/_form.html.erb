@@ -12,34 +12,13 @@
   </div>
   <br>
   <ul>
-    <%= f.fields_for :user_lines do |line_form| %>
-    <li>
-      <div><%= line_form.label :data_amount, "How much data do you need?" %></div>
-        <span><%= line_form.radio_button :data_amount, 1 %> 1GB</span> |
-        <span><%= line_form.radio_button :data_amount, 2 %> 2GB</span> |
-        <span><%= line_form.radio_button :data_amount, 4 %> 4GB</span> |
-        <span><%= line_form.radio_button :data_amount, 5 %> 5GB</span> |
-        <span><%= line_form.radio_button :data_amount, 8 %> 8GB</span> |
-        <span><%= line_form.radio_button :data_amount, 10 %> 10GB</span> |
-        <span><%= line_form.radio_button :data_amount, 20 %> 20GB</span> |
-        <span><%= line_form.radio_button :data_amount, Float::INFINITY %> Unlimited</span>
-    </li>
-      <br>
-    <li>
-      <div><%= line_form.label :hotspot, "Of your total data, about how much is hotspot use?" %></div>
-        <span><%= line_form.radio_button :hotspot, 0 %> What's Hotspot?</span> |
-        <span><%= line_form.radio_button :hotspot, 1 %> 1GB</span> |
-        <span><%= line_form.radio_button :hotspot, 5 %> 5GB</span> |
-        <span><%= line_form.radio_button :hotspot, 10 %> 10GB</span> |
-        <span><%= line_form.radio_button :hotspot, 15 %> 15GB</span>
-    </li>
-      <br>
-    <li>
-      <div><%= line_form.label :hd_video, "Does this line need HD-Video?" %></div>
-        <span><%= line_form.radio_button :hd_video, true, checked: true %> Yes</span> |
-        <span><%= line_form.radio_button :hd_video, false %> No</span>
-        <hr>
+    <%= f.fields_for :user_lines do |line| %>
+      <%= render 'user_line_fields', f: line %>
     <% end %>
+
+    <div>
+      <%= link_to_add_association 'Add Line', f, :user_lines %>
+    </div>
   </ul>
   
 

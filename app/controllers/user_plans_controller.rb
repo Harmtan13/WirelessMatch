@@ -3,7 +3,7 @@ class UserPlansController < ApplicationController
   def new
     @plan = UserPlan.new
 
-    10.times { @plan.user_lines.build }
+    @plan.user_lines.build
   end
 
   def create
@@ -34,7 +34,7 @@ class UserPlansController < ApplicationController
   end
 
   def results
-    @quiz = UserPlan.last
+    @quiz = @quiz = UserPlan.where(guest_id: session[:guest_user_id]).last
   end
 
   def user_params
