@@ -11,10 +11,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="text-center">
-    <div class="container d-flex h-100 p-3 mx-auto flex-column" >
-      <%= render 'shared/nav' %>
-      <%= yield %>
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <%= render 'shared/nav' %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
