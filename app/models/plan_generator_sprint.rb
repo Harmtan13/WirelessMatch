@@ -148,4 +148,16 @@ class PlanGeneratorSprint
       0
     end
   end
+
+  def data_amount
+    if plan_calculation.data_amount < Float::INFINITY
+      "#{plan_calculation.data_amount.to_i}GB Per-Line"
+    else
+      "Unlimited"
+    end
+  end
+
+  def data_price
+    plan_calculation.data_price
+  end
 end

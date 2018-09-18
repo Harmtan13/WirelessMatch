@@ -285,7 +285,7 @@ puts 'T-Mobile Plans created!'
 
 verizon = Carrier.create(name:'Verizon')
   shared_plan_2gb = verizon.carrier_plans.create(
-    name: 'Small - Shared Data',
+    name: 'Shared Data',
     data_amount: 2,
     data_price: 35,
     hd_video: true,
@@ -309,7 +309,7 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_2gb.carrier_lines.create(price: 20)
 
   shared_plan_4gb = verizon.carrier_plans.create(
-    name: 'Meduim - Shared Data', 
+    name: 'Shared Data', 
     data_amount: 4, 
     data_price: 50,
     hd_video: true,
@@ -333,7 +333,7 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_4gb.carrier_lines.create(price: 20)
 
   shared_plan_5gb = verizon.carrier_plans.create(
-    name: '5GB - Shared Data', 
+    name: 'Shared Data', 
     data_amount: 5, 
     data_price: 40,
     hd_video: true,
@@ -348,7 +348,7 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_5gb.carrier_lines.create(price: 20)
 
   shared_plan_8gb = verizon.carrier_plans.create(
-    name: 'Large - Shared Data', 
+    name: 'Shared Data', 
     data_amount: 8, 
     data_price: 70,
     hd_video: true,
