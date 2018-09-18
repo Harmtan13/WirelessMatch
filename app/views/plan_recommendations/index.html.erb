@@ -105,7 +105,7 @@
           <div class="card-block">
             <h5>Plan Information</h5>
             <div>Name: <%= @a.plan_calculations.name %></div>
-            <div>Data: Unlimited</div>
+            <div>Data: <%= @a.data_amount%></div>
             <div>Data-Price : <%= number_to_currency(@a.plan_calculations.data_price, precision: 0) %></div>
           </div>
         </div>
@@ -146,7 +146,7 @@
   <div class="col-md-3">
     <div class="card">
       <div class="card-block">
-        <h3><%= @sprint.name %></h3><p>
+        <h3><%= @sprint.name %></h3>
 
         <div class="card">
           <div class="card-block">
@@ -182,7 +182,7 @@
         <div class="card">
           <div class="card-block">
             <h5>Total</h5>
-            <%= number_to_currency(@s.final_price) %>
+            <%= number_to_currency(@s.final_price, precision: 0) %>
           </div>
         </div>
 

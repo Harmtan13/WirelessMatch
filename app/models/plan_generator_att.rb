@@ -169,6 +169,13 @@ class PlanGeneratorAtt
     plan_total(plan_calculations) + taxes + auto_pay
   end
 
+  def data_amount
+    if plan_calculations.data_amount < @unlimited_data
+      "Share #{plan_calculations.data_amount.to_i}GB"
+    else
+      "Unlimited"
+    end
+  end
 
 
   # Unlimited Plans

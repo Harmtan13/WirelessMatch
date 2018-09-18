@@ -3,7 +3,7 @@
 tmo = Carrier.create(name:'T-Mobile')
 
   tmo_essentials = tmo.carrier_plans.create(
-    plan_type: 'T-Mobile Essentials',
+    plan_type: 'Essentials',
     name: 'Essentials', 
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -26,7 +26,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_essentials.carrier_lines.create(price: 20)
 
   tmo_essentials_hotpost = tmo.carrier_plans.create(
-    plan_type: 'T-Mobile Essentials',
+    plan_type: 'Essentials',
     name: 'Essentials Hotspot', 
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -87,7 +87,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_55_one_plus.carrier_lines.create(price: 25 + 15)
 
   tmo_55_one_plus_family_pricing = tmo.carrier_plans.create(
-    plan_type: 'Unlimited 55 - One Plus Family',
+    plan_type: 'Unlimited 55',
     name: 'One Plus', 
     data_amount: Float::INFINITY,
     data_price: 0,
@@ -106,7 +106,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_55_one_plus_family_pricing.carrier_lines.create(price: 25 + 10)
 
   military_one = tmo.carrier_plans.create(
-    plan_type: 'Military T-Mobile-One',
+    plan_type: 'Military One',
     name: 'One',
     data_amount: Float::INFINITY,
     data_price: 0,
@@ -135,7 +135,7 @@ tmo = Carrier.create(name:'T-Mobile')
       military_one.carrier_lines.create(price: 30)
 
   military_one_plus = tmo.carrier_plans.create(
-    plan_type: 'Military - T-Mobile One',
+    plan_type: 'Military One',
     name: 'One Plus',
     data_amount: Float::INFINITY,
     data_price: 0,
@@ -164,7 +164,7 @@ tmo = Carrier.create(name:'T-Mobile')
       military_one_plus.carrier_lines.create(price: 30+15)
 
   military_one_plus_family = tmo.carrier_plans.create(
-    plan_type: 'Military - T-Mobile One Plus Family',
+    plan_type: 'Military One',
     name: 'One Plus',
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -193,7 +193,7 @@ tmo = Carrier.create(name:'T-Mobile')
       military_one_plus_family.carrier_lines.create(price: 30+10)
 
   tmo_one = tmo.carrier_plans.create(
-    plan_type: 'T-Mobile One',
+    plan_type: 'One',
     name: 'One',
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -222,7 +222,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_one.carrier_lines.create(price: 30)
 
   tmo_one_plus = tmo.carrier_plans.create(
-    plan_type: 'T-Mobile One',
+    plan_type: 'One',
     name: 'One Plus',
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -251,7 +251,7 @@ tmo = Carrier.create(name:'T-Mobile')
       tmo_one_plus.carrier_lines.create(price: 30+15)
 
   tmo_one_plus_family_pricing = tmo.carrier_plans.create(
-    plan_type: 'T-Mobile One Plus Family',
+    plan_type: 'One',
     name: 'One Plus',
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -289,7 +289,7 @@ verizon = Carrier.create(name:'Verizon')
     data_amount: 2,
     data_price: 35,
     hd_video: true,
-    hotspot_lte: 0,
+    hotspot_lte: 2,
     hotspot_3g: 0,
     soft_cap: 2,
     min_lines: 1,
@@ -313,7 +313,7 @@ verizon = Carrier.create(name:'Verizon')
     data_amount: 4, 
     data_price: 50,
     hd_video: true,
-    hotspot_lte: 0,
+    hotspot_lte: 4,
     hotspot_3g: 0,
     soft_cap: 4,
     min_lines: 1,
@@ -337,7 +337,7 @@ verizon = Carrier.create(name:'Verizon')
     data_amount: 5, 
     data_price: 40,
     hd_video: true,
-    hotspot_lte: 0,
+    hotspot_lte: 5,
     hotspot_3g: 0,
     soft_cap: 5,
     min_lines: 1,
@@ -352,7 +352,7 @@ verizon = Carrier.create(name:'Verizon')
     data_amount: 8, 
     data_price: 70,
     hd_video: true,
-    hotspot_lte: 0,
+    hotspot_lte: 8,
     hotspot_3g: 0,
     soft_cap: 8,
     min_lines: 1,
@@ -454,7 +454,7 @@ verizon = Carrier.create(name:'Verizon')
 
 att = Carrier.create(name:'AT&T')
   flex_share_1gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex 1GB', 
+    name: 'Mobile Share Flex', 
     data_amount: 1, 
     data_price: 35,
     hd_video: true,
@@ -478,7 +478,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_1gb.carrier_lines.create(price: 20)
 
   flex_share_5gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex 5GB', 
+    name: 'Mobile Share Flex', 
     data_amount: 5, 
     data_price: 60,
     hd_video: true,
@@ -502,7 +502,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_5gb.carrier_lines.create(price: 20)
 
   flex_share_10gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex 10GB', 
+    name: 'Mobile Share Flex', 
     data_amount: 10, 
     data_price: 85,
     hd_video: true,
@@ -526,7 +526,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_10gb.carrier_lines.create(price: 20)
 
   flex_share_20gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex 20GB', 
+    name: 'Mobile Share Flex', 
     data_amount: 20, 
     data_price: 110,
     hd_video: true,
@@ -550,7 +550,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_20gb.carrier_lines.create(price: 20)
 
   unlimited_single_line = att.carrier_plans.create(
-    name: 'Unlimited & More', 
+    name: 'Basic Unlimited', 
     data_amount: Float::INFINITY, 
     data_price: 55,
     hd_video: false,
@@ -565,7 +565,7 @@ att = Carrier.create(name:'AT&T')
     unlimited_single_line.carrier_lines.create(price: 35)
 
   unlimited_premium_single_line = att.carrier_plans.create(
-    name: 'Unlimited & More Premium', 
+    name: 'Premium Unlimited', 
     data_amount: Float::INFINITY, 
     data_price: 65,
     hd_video: true,
