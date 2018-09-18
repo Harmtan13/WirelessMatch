@@ -58,8 +58,8 @@
           <div class="card-block">
             <h5>Plan Information</h5>
             <div>Name: <%= @v.plan_name %></div>
-            <div>Data: Unlimited</div>
-            <div><%= "Data-Price: " if @v.data_price%><%= number_to_currency(@v.data_price, precision: 0) %></div>
+            <div>Data: <%= @v.data_amount%> </div>
+            <div>Data-Price: <%= number_to_currency(@v.data_price, precision: 0) %></div>
           </div>
         </div>
 

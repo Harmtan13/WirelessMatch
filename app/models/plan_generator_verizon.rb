@@ -82,6 +82,8 @@ class PlanGeneratorVerizon
   def data_price
     if plan_calculation == bucket_plan_calculation
       bucket_plan_calculation.data_price
+    else
+      plan_calculation.first.data_price
     end
   end
 
@@ -98,6 +100,14 @@ class PlanGeneratorVerizon
       -auto_pay.min
     else
       0
+    end
+  end
+
+  def data_amount
+    if plan_calculation == unlimited_hd_video
+      "Unlimited"
+    else
+      "#{plan_calculation.data_amount.to_i}GB"
     end
   end
 

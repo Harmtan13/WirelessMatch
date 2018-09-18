@@ -285,7 +285,7 @@ puts 'T-Mobile Plans created!'
 
 verizon = Carrier.create(name:'Verizon')
   shared_plan_2gb = verizon.carrier_plans.create(
-    name: 'Shared Data 2GB',
+    name: 'Small - Shared Data',
     data_amount: 2,
     data_price: 35,
     hd_video: true,
@@ -309,7 +309,7 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_2gb.carrier_lines.create(price: 20)
 
   shared_plan_4gb = verizon.carrier_plans.create(
-    name: 'Shared Data 4GB', 
+    name: 'Meduim - Shared Data', 
     data_amount: 4, 
     data_price: 50,
     hd_video: true,
@@ -333,7 +333,7 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_4gb.carrier_lines.create(price: 20)
 
   shared_plan_5gb = verizon.carrier_plans.create(
-    name: 'Shared Data 5GB', 
+    name: '5GB - Shared Data', 
     data_amount: 5, 
     data_price: 40,
     hd_video: true,
@@ -348,7 +348,7 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_5gb.carrier_lines.create(price: 20)
 
   shared_plan_8gb = verizon.carrier_plans.create(
-    name: 'Shared Data 8GB', 
+    name: 'Large - Shared Data', 
     data_amount: 8, 
     data_price: 70,
     hd_video: true,
@@ -372,7 +372,7 @@ verizon = Carrier.create(name:'Verizon')
       shared_plan_8gb.carrier_lines.create(price: 20)
 
   go_unlimited = verizon.carrier_plans.create(
-    plan_type: 'Mix & Match - Unlimtied',
+    plan_type: 'Mix & Match',
     name: 'Go',
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -397,7 +397,7 @@ verizon = Carrier.create(name:'Verizon')
       go_unlimited.carrier_lines.create(price: 45)
 
   beyond_unlimited = verizon.carrier_plans.create(
-    plan_type: 'Mix & Match - Unlimtied',
+    plan_type: 'Mix & Match',
     name: 'Beyond', 
     data_amount: Float::INFINITY, 
     data_price: 0,
@@ -422,7 +422,7 @@ verizon = Carrier.create(name:'Verizon')
       beyond_unlimited.carrier_lines.create(price: 55)
 
   above_unlimited = verizon.carrier_plans.create(
-    plan_type: 'Mix & Match - Unlimtied',
+    plan_type: 'Mix & Match',
     name: 'Above', 
     data_amount: Float::INFINITY, 
     data_price: 0,
