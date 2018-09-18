@@ -10,8 +10,8 @@
           <div class="card-block">
             <h5>Plan Information</h5>
             <div>Name: <%= @t.line_calculation.first.plan_type %></div>
-            <div>Data: Unlimited</div>
-            <div>Data-Price: $0</div>
+            <div>Data: <%= @t.data_amount %></div>
+            <div>Data-Price: <%= number_to_currency(@t.data_price, precision: 0) %></div>
           </div>
         </div>
 
@@ -26,7 +26,8 @@
         <div class="card">
           <div class="card-block">
             <h5>Taxes & Fees</h5>
-             <%= "Estimated: #{@t.tax_value}" %>
+             <%=  @t.included_tax if @t.included_tax %>
+             <%=  "Estimated #{number_to_currency(@t.taxes, precision: 0)}" unless @t.included_tax %>
           </div>
         </div>
 

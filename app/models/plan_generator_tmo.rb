@@ -169,11 +169,9 @@ class PlanGeneratorTmo
     end
   end
 
-  def tax_value
+  def included_tax
     if taxes == 0
-      'Included in plan'
-    else
-      "$#{taxes}"
+      'All-Included'
     end
   end
 
@@ -221,5 +219,15 @@ class PlanGeneratorTmo
       plan_lines << temp_plans.first
     end
     plan_lines
+  end
+
+  def data_amount
+    if line_calculation.first.data_amount == Float::INFINITY
+      "Unlimited"
+    end
+  end
+
+  def data_price
+    line_calculation.first.data_price
   end
 end
