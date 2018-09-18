@@ -1,56 +1,191 @@
 <h1>Plan Recommendations</h1>
 
-<h3><%= @tmo.name %></h3>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-block">
+        <h3><%= @tmo.name %></h3>
 
-<p> <%= @t.line_calculation.first.plan_type %> </p>
+        <div class="card">
+          <div class="card-block">
+            <h5>Plan Information</h5>
+            <div>Name: <%= @t.line_calculation.first.plan_type %></div>
+            <div>Data: Unlimited</div>
+            <div>Data-Price: $0</div>
+          </div>
+        </div>
 
-  <% @t.line_pricing.each.with_index(1) do |line, index| %>
-  <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @t.line_calculation[index-1].name%></p>
-  <% end %>
+        <div class="card">
+          <div class="card-block">
+            <% @t.line_pricing.each.with_index(1) do |line, index| %>
+              <div><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> - <%= @t.line_calculation[index-1].name%></div>
+            <% end %>
+          </div>
+        </div>
 
-  <p>Estimated Taxes & Fees: <%= @t.tax_value %></p>
-  <p>Auto-Pay Discount: <%= number_to_currency(@t.auto_pay, precision: 0) %></p>
-  <p>Total: <%= number_to_currency(@t.final_plan_total, precision: 0) %></p>
+        <div class="card">
+          <div class="card-block">
+            <h5>Taxes & Fees</h5>
+             <%= "Estimated: #{@t.tax_value}" %>
+          </div>
+        </div>
 
-<h3><%= @verizon.name %></h3>
+        <div class="card">
+          <div class="card-block">
+            <h5>Discounts</h5>
+            Auto-Pay: <%= number_to_currency(@t.auto_pay, precision: 0) %>
+          </div>
+        </div>
 
-  <p><%= @v.plan_name %></p>
+        <div class="card">
+          <div class="card-block">
+            <h5>Total</h5>
+            <%= number_to_currency(@t.final_plan_total, precision: 0) %>
+          </div>
+        </div>
 
-  <p><%= "Data-Price: " if @v.data_price%><%= number_to_currency(@v.data_price, precision: 0) %></p>
+      </div>
+    </div>
+  </div>
 
-  <% @v.line_pricing.each.with_index(1) do |line, index| %>
-    <p>
-    <%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-block">
+        <h3><%= @verizon.name %></h3>
 
-    <%= "- #{@v.unlimited_plan_name[index-1].name}" if @v.unlimited_plan_name%>
-    </p>
-  <% end %>
+        <div class="card">
+          <div class="card-block">
+            <h5>Plan Information</h5>
+            <div>Name: <%= @v.plan_name %></div>
+            <div>Data: Unlimited</div>
+            <div><%= "Data-Price: " if @v.data_price%><%= number_to_currency(@v.data_price, precision: 0) %></div>
+          </div>
+        </div>
 
-  <p>Estimated Taxes & Fees: <%= number_to_currency(@v.taxes, precision: 0) %></p>
-  <p>Auto-Pay Discount: <%= number_to_currency(@v.auto_pay, precision: 0) %></p>
-  <p>Total: <%= number_to_currency(@v.taxes_total, precision: 0) %></p>
+        <div class="card">
+          <div class="card-block">
+            <% @v.line_pricing.each.with_index(1) do |line, index| %>
+              <div><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> <%= "- #{@v.unlimited_plan_name[index-1].name}" if @v.unlimited_plan_name%></div>
+            <% end %>
+          </div>
+        </div>
 
-<h3><%= @att.name %></h3>
+        <div class="card">
+          <div class="card-block">
+            <h5>Taxes & Fees</h5>
+              Estimated: <%= number_to_currency(@v.taxes, precision: 0) %>
+          </div>
+        </div>
 
-  <p><%= @a.plan_calculations.name %></p>
-  <p>Data-Price : <%= number_to_currency(@a.plan_calculations.data_price, precision: 0) %></p>
-  
-    <% @a.line_pricing.each.with_index(1) do |line, index| %>
-    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %></p>
-    <% end %>
+        <div class="card">
+          <div class="card-block">
+            <h5>Discounts</h5>
+            Auto-Pay: <%= number_to_currency(@v.auto_pay, precision: 0) %>
+          </div>
+        </div>
 
-  <p>Estimated Taxes & Fees: <%= number_to_currency(@a.taxes, precision: 0) %></p>
-  <p>Auto-Pay Discount: <%= number_to_currency(@a.auto_pay, precision: 0) %></p>
-  <p>Total: <%= number_to_currency(@a.final_plan_total, precision: 0) %></p>
+        <div class="card">
+          <div class="card-block">
+            <h5>Total</h5>
+            <%= number_to_currency(@v.taxes_total, precision: 0) %>
+          </div>
+        </div>
 
-<h3><%= @sprint.name %></h3><p>
+      </div>
+    </div>
+  </div>
 
-  <p><%= @s.plan_calculation.name %></p>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-block">
+        <h3><%= @att.name %></h3>
 
-  <% @s.line_pricing.each.with_index(1) do |line, index|%>
-    <p><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %> </p>
-  <% end %>
+        <div class="card">
+          <div class="card-block">
+            <h5>Plan Information</h5>
+            <div>Name: <%= @a.plan_calculations.name %></div>
+            <div>Data: Unlimited</div>
+            <div>Data-Price : <%= number_to_currency(@a.plan_calculations.data_price, precision: 0) %></div>
+          </div>
+        </div>
 
-  <p>Estimated Taxes & Fees: <%= number_to_currency(@s.taxes, precision: 0) %></p>
-  <p>Auto-Pay Discount: <%= number_to_currency(@s.auto_pay, precision: 0) %></p>
-  <p>Total: <%= number_to_currency(@s.final_price) %></p>
+        <div class="card">
+          <div class="card-block">
+            <% @a.line_pricing.each.with_index(1) do |line, index| %>
+              <div><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %></div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h5>Taxes & Fees</h5>
+              Estimated: <%= number_to_currency(@a.taxes, precision: 0) %>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h5>Discounts</h5>
+            Auto-Pay: <%= number_to_currency(@a.auto_pay, precision: 0) %>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h5>Total</h5>
+            <%= number_to_currency(@a.final_plan_total, precision: 0) %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-block">
+        <h3><%= @sprint.name %></h3><p>
+
+        <div class="card">
+          <div class="card-block">
+            <h5>Plan Information</h5>
+            <div>Name: <%= @s.plan_calculation.name %></div>
+            <div>Data: Unlimited</div>
+            <div>Data-Price : $0</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <% @s.line_pricing.each.with_index(1) do |line, index|%>
+              <div><%= "Line-#{index}"%>: <%= number_to_currency(line.price, precision: 0) %></div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h5>Taxes & Fees</h5>
+              Estimated: <%= number_to_currency(@s.taxes, precision: 0) %>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h5>Discounts</h5>
+            Auto-Pay: <%= number_to_currency(@s.auto_pay, precision: 0) %>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h5>Total</h5>
+            <%= number_to_currency(@s.final_price) %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
