@@ -454,7 +454,7 @@ verizon = Carrier.create(name:'Verizon')
 
 att = Carrier.create(name:'AT&T')
   flex_share_1gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex', 
+    name: 'Mobile Share', 
     data_amount: 1, 
     data_price: 35,
     hd_video: true,
@@ -478,7 +478,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_1gb.carrier_lines.create(price: 20)
 
   flex_share_5gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex', 
+    name: 'Mobile Share', 
     data_amount: 5, 
     data_price: 60,
     hd_video: true,
@@ -502,7 +502,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_5gb.carrier_lines.create(price: 20)
 
   flex_share_10gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex', 
+    name: 'Mobile Share', 
     data_amount: 10, 
     data_price: 85,
     hd_video: true,
@@ -526,7 +526,7 @@ att = Carrier.create(name:'AT&T')
       flex_share_10gb.carrier_lines.create(price: 20)
 
   flex_share_20gb = att.carrier_plans.create(
-    name: 'Mobile Share Flex', 
+    name: 'Mobile Share', 
     data_amount: 20, 
     data_price: 110,
     hd_video: true,
@@ -580,7 +580,7 @@ att = Carrier.create(name:'AT&T')
       unlimited_premium_single_line.carrier_lines.create(price: 35)
 
   unlimited = att.carrier_plans.create(
-    name: 'Unlimited & More', 
+    name: 'Unlimited', 
     data_amount: Float::INFINITY, 
     data_price: 95,
     hd_video: false,
@@ -604,7 +604,7 @@ att = Carrier.create(name:'AT&T')
       unlimited.carrier_lines.create(price: 35)
 
   unlimited_premium = att.carrier_plans.create(
-    name: 'Unlimited & More Premium', 
+    name: 'Premium Unlimited', 
     data_amount: Float::INFINITY, 
     data_price: 120,
     hd_video: true,
