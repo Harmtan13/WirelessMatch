@@ -1,4 +1,4 @@
-<div class="nav-spacer">
+<div class="page-spacer">
   <%= link_to "Wireless-Match", root_path%> |
   <%= link_to('Match Quiz', new_user_plan_path) unless session[:guest_user_id] %>
   <%= link_to('Match Quiz', edit_user_plan_path(session[:form_id])) if session[:guest_user_id] %> |
