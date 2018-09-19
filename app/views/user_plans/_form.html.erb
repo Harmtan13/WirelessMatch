@@ -5,24 +5,43 @@
     <% end %>
   <% end %>
       
-  <div class="form-group">
-    <div><%= f.label :auto_pay, "Carriers give discounts for enrolling in Auto-Pay, Do you want to enroll?"%></div>
-    <span><%= f.radio_button :auto_pay, true, checked: true %> Yes</span>
-    <span><%= f.radio_button :auto_pay, false %> No</span>
+  <div class='row'>
+    <div class="card center">
+      <div class="card-body text-center">
+        <div class='col-md-12'>
+        <div>Autopay enrollment unlocks discounts from carriers. Would you like to enroll?</div>
+          <div class="form-check-inline">
+              <%= f.radio_button :auto_pay, true, class: 'form-check-input' %>
+              <%= f.label :auto_pay, "Yes", class: 'form-check-label'%>
+          </div>
+            
+          <div class="form-check-inline">
+            <%= f.radio_button :auto_pay, false, class: 'form-check-input' %>
+            <%= f.label :auto_pay, "No", class: 'form-check-label'%>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <ul>
+
+  <div class="row no-gutter">
     <%= f.fields_for :user_lines do |line| %>
       <%= render 'user_line_fields', f: line %>
     <% end %>
 
-    <div>
-      <%= link_to_add_association 'Add Line', f, :user_lines %>
+    <div class="col-md-3">
+
+          <%= link_to_add_association 'Add Line', f, :user_lines %>
+
     </div>
-  </ul>
-  
+  </div>
+
+  <br>
+  <br>
 
   <div class="actions">
     <%= f.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>
+<div>

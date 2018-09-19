@@ -1,34 +1,104 @@
-<div class="nested-fields">
-<b><u>New Line</u></b>
-<br>
-<br>
-<li>
-  <div><%= f.label :data_amount, "How much data does this line need?" %></div>
-    <span><%= f.radio_button :data_amount, 1.0 %> 1GB</span> |
-    <span><%= f.radio_button :data_amount, 2.0 %> 2GB</span> |
-    <span><%= f.radio_button :data_amount, 4.0 %> 4GB</span> |
-    <span><%= f.radio_button :data_amount, 5.0 %> 5GB</span> |
-    <span><%= f.radio_button :data_amount, 8.0 %> 8GB</span> |
-    <span><%= f.radio_button :data_amount, 10.0 %> 10GB</span> |
-    <span><%= f.radio_button :data_amount, 20.0 %> 20GB</span> |
-    <span><%= f.radio_button :data_amount, Float::INFINITY %> Unlimited</span>
-</li>
-  <br>
-<li>
-  <div><%= f.label :hotspot, "Of that data, about how much is hotspot use?" %></div>
-    <span><%= f.radio_button :hotspot, 0.0 %> None</span> |
-    <span><%= f.radio_button :hotspot, 1.0 %> 1GB</span> |
-    <span><%= f.radio_button :hotspot, 5.0 %> 5GB</span> |
-    <span><%= f.radio_button :hotspot, 10.0 %> 10GB</span> |
-    <span><%= f.radio_button :hotspot, 15.0 %> 15GB</span>
-</li>
-  <br>
-<li>
-  <div><%= f.label :hd_video, "Does this line need HD-Video?" %></div>
-    <span><%= f.radio_button :hd_video, true, checked: true %> Yes</span> |
-    <span><%= f.radio_button :hd_video, false %> No</span>
-</li>
-    <br>
-    <p><%= link_to_remove_association 'Remove Line', f %></p>
-    <hr>
+<div class="col-md-3">
+  <div class="nested-fields">
+    <div class="card">
+      <div class="card-body">
+        <b><u>New Line</u></b>
+
+        <br>
+        <br>
+
+        <div>"How much data does this line need?</div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, 1.0, class: 'form-check-input' %>
+          <%= f.label :data_amount, "1GB", class: 'form-check-label'%>
+        </div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, 2.0, class: 'form-check-input' %>
+          <%= f.label :data_amount, "2GB", class: 'form-check-label'%>
+        </div>
+      
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, 4.0, class: 'form-check-input' %>
+          <%= f.label :data_amount, "4GB", class: 'form-check-label'%>
+        </div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, 5.0, class: 'form-check-input' %>
+          <%= f.label :data_amount, "5GB", class: 'form-check-label'%>
+        </div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, 8.0, class: 'form-check-input' %>
+          <%= f.label :data_amount, "8GB", class: 'form-check-label'%>
+        </div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, 10.0, class: 'form-check-input' %>
+          <%= f.label :data_amount, "10GB", class: 'form-check-label'%>
+        </div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, 20.0, class: 'form-check-input' %>
+          <%= f.label :data_amount, "20GB", class: 'form-check-label'%>
+        </div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :data_amount, Float::INFINITY, class: 'form-check-input' %>
+          <%= f.label :data_amount, "Unlimited", class: 'form-check-label'%>
+        </div> 
+
+        <br>
+        <br>
+            
+        <div>Of that data, about how much is hotspot use?</div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :hotspot, 0.0, class: 'form-check-input' %>
+          <%= f.label :hotspot, "None", class: 'form-check-label'%>
+        </div> 
+
+        <div class="form-check-inline">
+          <%= f.radio_button :hotspot, 1.0, class: 'form-check-input' %> 
+          <%= f.label :hotspot, "1GB", class: 'form-check-label'%>
+        </div> 
+
+        <div class="form-check-inline">
+          <%= f.radio_button :hotspot, 5.0, class: 'form-check-input' %>
+          <%= f.label :hotspot, "5GB", class: 'form-check-label'%>
+        </div> 
+
+        <div class="form-check-inline">
+          <%= f.radio_button :hotspot, 10.0, class: 'form-check-input' %> 
+          <%= f.label :hotspot, "10GB", class: 'form-check-label'%>
+        </div> 
+
+        <div class="form-check-inline">
+          <%= f.radio_button :hotspot, 15.0, class: 'form-check-input' %> 
+          <%= f.label :hotspot, "15GB", class: 'form-check-label'%>
+        </div> 
+
+        <br>
+        <br>
+
+        <div>Does this line need HD-Video?</div>
+
+        <div class="form-check-inline">
+          <%= f.radio_button :hd_video, true, class: 'form-check-input' %> 
+          <%= f.label :hd_video, "Yes", class: 'form-check-label'%>
+        </div> 
+
+        <div class="form-check-inline">
+          <%= f.radio_button :hd_video, false, class: 'form-check-input' %> 
+          <%= f.label :hd_video, "No", class: 'form-check-label'%>
+        </div> 
+
+        <br>
+        <br>
+
+        <p><%= link_to_remove_association 'Remove Line', f %></p>
+      </div>
+    </div>
+  </div>
 </div>
