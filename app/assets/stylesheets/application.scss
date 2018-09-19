@@ -24,34 +24,35 @@
 
  .card {
   margin-top: 15px;
+  border: 1px solid black;
+  border-radius: 3px;
  }
  .card-body {
   color: black;
   padding: 10px;
-  
  }
 
  .verizon {
-  background-color: rgb(207,0,0);
+  background-color: rgba(207, 0, 0, 0.80);
   max-width: 500px;
   margin: auto;
   margin: 20px auto;
  }
 
  .att {
-  background-color: rgb(0, 168, 224);
+  background-color: rgba(0, 168, 224, 0.80);
   max-width: 500px;
   margin: 20px auto;
  }
 
  .tmo {
-   background-color: rgb(255,0,159);
+   background-color: rgba(255, 0, 159, 0.80);
    max-width: 500px;
    margin: 20px auto;
  }
 
  .sprint {
-   background-color: rgb(255, 221, 5);
+   background-color: rgba(255, 221, 5, 0.80);
    max-width: 500px;
    margin: 20px auto;
  }
