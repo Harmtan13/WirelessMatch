@@ -13,6 +13,8 @@
 
 <div>Total Data: <%= @quiz.user_lines.sum(:data_amount)%></div>
 
+<div>Guest-ID: <%= @quiz.guest_id %></div>
+
   <% @quiz.user_lines.each.with_index(1) do |line, index| %>
     <h4> <%= "Line-#{index}"%> </h4>
     
@@ -23,5 +25,6 @@
     <div>HD Video: <%= line.hd_video %></div>
 
     <div>Soft Cap: <%= line.soft_cap %></div>
+
     
   <% end %>
