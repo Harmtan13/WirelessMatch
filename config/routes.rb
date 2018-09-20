@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :plan_recommendations
+  get 'admin', to: 'plan_recommendations#admin'
   root to: 'pages#home'
 
   resources :user_plans
