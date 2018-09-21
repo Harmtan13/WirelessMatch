@@ -1,5 +1,5 @@
 class UserPlan < ApplicationRecord
-  validates_presence_of :auto_pay, :guest_id
+  validates_presence_of :auto_pay, :guest_id, :user_lines
 
   has_many :user_lines
 
@@ -11,11 +11,5 @@ class UserPlan < ApplicationRecord
   end
   
   accepts_nested_attributes_for :user_lines,
-                                allow_destroy: true,
-                                reject_if: lambda { |attrs|
-                                          (attrs['data_amount'].blank? ||
-                                            attrs['hotspot'].blank? ||
-                                            attrs['hd_video'].blank?)
-                                          }, 
-                                limit: 10
-                              end
+    allow_destroy: true 
+  end
