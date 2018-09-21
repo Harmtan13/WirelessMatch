@@ -23,7 +23,6 @@ class UserPlansController < ApplicationController
         format.html { render :new }
       end
     end
-
   end
 
   def edit
