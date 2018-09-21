@@ -1,5 +1,10 @@
 class UserPlansController < ApplicationController
   before_action :set_plan, only: [:edit, :update, :show, :destroy]
+
+  def index
+   redirect_to new_user_plan_path
+  end
+  
   def new
     @plan = UserPlan.new
 
@@ -22,6 +27,10 @@ class UserPlansController < ApplicationController
   end
 
   def edit
+  end
+
+  def show
+    redirect_to edit_user_plan_path(session[:form_id])
   end
 
   def update
