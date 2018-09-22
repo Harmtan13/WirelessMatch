@@ -1,5 +1,7 @@
 class UserPlan < ApplicationRecord
-  validates_presence_of :auto_pay, :guest_id, :user_lines
+  validates_presence_of :guest_id, :user_lines 
+
+  validates_inclusion_of :auto_pay, in: [true, false]
 
   validate :check_line_count
 
