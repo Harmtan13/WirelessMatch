@@ -1,5 +1,6 @@
 <h1>Wireless-Match</h1>
-<p>Carrier plans are a jumbled mess. We make comparing them easy. Tell us what you need, and we'll show you your best options</p>
+  <p>Carrier plans are a jumbled mess. We make comparing them easy. Tell us what you need, and we'll show you your best options</p>
 
-  <%= link_to('Match Quiz', new_user_plan_path, class: "btn btn-success") unless session[:guest_user_id] %>
-  <%= link_to('Match Quiz', edit_user_plan_path(session[:form_id]), class: "btn btn-success") if session[:guest_user_id] %>
+    <%= link_to('Match Quiz', new_user_plan_path, class: "btn btn-success") unless session[:guest_user_id] %>
+    <%= link_to('Match Quiz', edit_user_plan_path(session[:form_id]), class: "btn btn-success") if session[:guest_user_id] %>
+    <%= link_to('Plan Recommendations', plan_recommendations_path, class: "btn btn-primary") if session[:guest_user_id] %>
